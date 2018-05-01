@@ -12,16 +12,14 @@ export class ReviewLink extends React.PureComponent {
     const { href, className, children, ariaLabel } = this.props;
     const onClick = event => this.handleClick(event);
     return (
-      <div>
-        <a
-          href={href}
-          onClick={onClick}
-          className={className}
-          aria-label={ariaLabel}
-        >
-          {children}
-        </a>
-      </div>
+      <a
+        href={href}
+        onClick={onClick}
+        className={className}
+        aria-label={ariaLabel}
+      >
+        {children}
+      </a>
     );
   }
 }

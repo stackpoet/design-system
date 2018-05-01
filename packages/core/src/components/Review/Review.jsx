@@ -29,7 +29,7 @@ export class Review extends React.PureComponent {
       this.props.className && this.props.className
     );
     return (
-      <div className={classes}>
+      <article className={classes}>
         <div className="ds-u-margin-right--2">
           {this.heading()}
           <div className="ds-c-review__body">{this.props.children}</div>
@@ -37,7 +37,7 @@ export class Review extends React.PureComponent {
         <ReviewLink onClick={this.props.onEditClick} href={this.props.editHref}>
           {this.props.editText}
         </ReviewLink>
-      </div>
+      </article>
     );
   }
 }
