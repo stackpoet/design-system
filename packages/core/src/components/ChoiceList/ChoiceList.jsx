@@ -2,7 +2,7 @@ import Choice from './Choice';
 import FormLabel from '../FormLabel/FormLabel';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Select from './Select';
+import Select from '../Select/Select';
 import classNames from 'classnames';
 import uniqueId from 'lodash.uniqueid';
 
