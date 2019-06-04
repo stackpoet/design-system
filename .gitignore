@@ -1,3 +1,9 @@
+# Jekyll stuff
+_site
+.sass-cache
+.jekyll-metadata
+
+
 # Documentation is generated into this directory
 /docs
 

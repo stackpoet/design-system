@@ -1,0 +1,30 @@
+
+.ds-u-text-align--center {
+  text-align: center !important;
+}
+
+.ds-u-text-align--left {
+  text-align: left !important;
+}
+
+.ds-u-text-align--right {
+  text-align: right !important;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @media (min-width: $value) {
+    .ds-u-#{$breakpoint}-text-align--center {
+      text-align: center !important;
+    }
+
+    .ds-u-#{$breakpoint}-text-align--left {
+      text-align: left !important;
+    }
+
+    .ds-u-#{$breakpoint}-text-align--right {
+      text-align: right !important;
+    }
+  }
+}
