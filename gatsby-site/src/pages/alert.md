@@ -1,8 +1,12 @@
 ---
-path: /pages/my-first-post
+path: /pages/alert
 date: 2017-11-07
 title: My first blog post
-layout: blog-template
+status: WIP
 ---
 
-# Test page
+# Some Title
+
+Some text
+
+<Alert></Alert>

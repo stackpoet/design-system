@@ -2,35 +2,32 @@ module.exports = {
   siteMetadata: {
     title: `CMSDS Design System`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@gatsbyjs`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: "gatsby-transformer-remark",
-      options: [
-        {
-          resolve: "gatsby-remark-component",
-          options: { components: [] },
-        },
-      ],
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: ['gatsby-remark-component']
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: "markdown-pages",
-      },
+        name: 'markdown-pages'
+      }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -40,8 +37,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-  ],
-}
+        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+      }
+    }
+  ]
+};
