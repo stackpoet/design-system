@@ -3,22 +3,28 @@ import { graphql } from 'gatsby';
 import rehypeReact from 'rehype-react';
 import { Alert } from '../components/Alert/Alert';
 
+
 const PostTemplate = ({ data }) => {
   return (
     <div className="blog-post-container">
       <div className="blog-post">
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         <h2>{data.markdownRemark.frontmatter.date}</h2>
-        <h3>{data.markdownRemark.frontmatter.status}</h3>
-        <div>{renderAst(data.markdownRemark.htmlAst)}</div>
+        <p>Status: {data.markdownRemark.frontmatter.status}</p>
+
+        <div className="body-section">{renderAst(data.markdownRemark.htmlAst)}</div>
+        // Trying to render the plain HTML example here
+        <iframe src={data.markdownRemark.frontmatter.example}>Add Source here</iframe>
       </div>
     </div>
+
   );
 };
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { Alert: Alert }
+  components: { "alert": Alert }
+  // NOTE: the key has to be in small-caps.
 }).Compiler;
 
 export default PostTemplate;
@@ -32,6 +38,7 @@ export const query = graphql`
         path
         title
         status
+        example
       }
     }
   }
