@@ -1,9 +1,13 @@
-import { AlertHTML } from '../components/Alert/Alert.htmlExample.js';
-import { AlertReact } from '../components/Alert/Alert.reactExample.jsx';
+import {
+  AlertHTMLSource,
+  AlertReactExample,
+  AlertReactSource
+} from '../components/Alert/Alert.example.jsx';
 
 export const pageExamples = {
   Alert: {
-    htmlExample: AlertHTML,
-    reactExample: AlertReact
+    htmlSource: AlertHTMLSource,
+    reactExample: AlertReactExample,
+    reactSource: AlertReactSource
   }
 };

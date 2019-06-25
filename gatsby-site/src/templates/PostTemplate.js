@@ -12,11 +12,14 @@ const PostTemplate = ({ data }) => {
         <h2>{data.markdownRemark.frontmatter.date}</h2>
         <p>Status: {data.markdownRemark.frontmatter.status}</p>
 
-        <h3>HTML example: </h3>
-        <div dangerouslySetInnerHTML={{ __html: examples.htmlExample }} />
+        <h3>HTML source: </h3>
+        <pre> {examples.htmlSource} </pre>
 
         <h3>React example: </h3>
         <div>{examples.reactExample}</div>
+
+        <h3>React source: </h3>
+        <pre>{examples.reactSource}</pre>
       </div>
     </div>
   );
