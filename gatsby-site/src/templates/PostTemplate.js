@@ -1,10 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { graphql } from 'gatsby';
-import rehypeReact from 'rehype-react';
-import { Alert } from '../components/Alert/Alert';
-
+import { pageExamples } from '../pages/pageExamples';
 
 const PostTemplate = ({ data }) => {
+  const examples = pageExamples[data.markdownRemark.frontmatter.title];
   return (
     <div className="blog-post-container">
       <div className="blog-post">
@@ -12,20 +12,15 @@ const PostTemplate = ({ data }) => {
         <h2>{data.markdownRemark.frontmatter.date}</h2>
         <p>Status: {data.markdownRemark.frontmatter.status}</p>
 
-        <div className="body-section">{renderAst(data.markdownRemark.htmlAst)}</div>
-        // Trying to render the plain HTML example here
-        <iframe src={data.markdownRemark.frontmatter.example}>Add Source here</iframe>
+        <h3>HTML example: </h3>
+        <div dangerouslySetInnerHTML={{ __html: examples.htmlExample }} />
+
+        <h3>React example: </h3>
+        <div>{examples.reactExample}</div>
       </div>
     </div>
-
   );
 };
-
-const renderAst = new rehypeReact({
-  createElement: React.createElement,
-  components: { "alert": Alert }
-  // NOTE: the key has to be in small-caps.
-}).Compiler;
 
 export default PostTemplate;
 
@@ -38,8 +33,16 @@ export const query = graphql`
         path
         title
         status
-        example
       }
     }
   }
 `;
+
+PostTemplate.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired
+  })
+};
