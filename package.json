@@ -20,11 +20,20 @@
     "test:e2e": "bash scripts/jest.sh --e2e",
     "test:e2e:skipBuild": "bash scripts/jest.sh --e2e --skip-build",
     "update-snapshots": "NODE_ENV=test bash scripts/jest.sh -u",
-    "lint": "eslint tools/ examples/**/src/ packages/**/src/ --ext .js --ext .jsx -f table && gulp lint --env=test --theme"
+    "lint": "eslint tools/ examples/**/src/ packages/**/src/ --ext .js --ext .jsx -f table && gulp lint --env=test --theme",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@cmsgov/eslint-config-design-system": "file:./packages/eslint-config-design-system",
     "@cmsgov/stylelint-config-design-system": "file:./packages/stylelint-config-design-system",
+    "@storybook/addon-a11y": "^5.1.11",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-knobs": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addon-notes": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/react": "^5.1.11",
     "autoprefixer": "9.6.0",
     "axe-webdriverjs": "^2.1.0",
     "babel-core": "^6.26.0",
@@ -114,5 +123,6 @@
   },
   "resolutions": {
     "gulp-sass/node-sass": ">=4.7.2"
-  }
+  },
+  "dependencies": {}
 }
