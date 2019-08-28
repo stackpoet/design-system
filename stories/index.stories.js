@@ -1,19 +1,22 @@
-import { Button, Welcome } from '@storybook/react/demo';
 import { addDecorator, storiesOf } from '@storybook/react';
 import Alert from '../packages/core/src/components/Alert/Alert';
 import React from 'react';
-import { action } from '@storybook/addon-actions';
+import { Welcome } from '@storybook/react/demo';
 import alertmarkdownNotes from '../packages/core/src/components/Alert/someMarkdownText.md';
-import { linkTo } from '@storybook/addon-links';
 import { withA11y } from '@storybook/addon-a11y';
+import { withInfo } from '@storybook/addon-info';
+
+addDecorator(withInfo);
 
 // should only be added once
 // best place is in config.js
 addDecorator(withA11y);
 
-storiesOf('Welcome', module).add('to Storybook', () => (
-  <Welcome showApp={linkTo('Button')} />
-));
+storiesOf('Welcome', module).add('to Storybook', () => <Welcome />, {
+  info: {
+    disable: true
+  }
+});
 
 storiesOf('Components/Alert', module).add(
   'Default Alert',
@@ -23,18 +26,15 @@ storiesOf('Components/Alert', module).add(
     </Alert>
   ),
   {
-    notes: { markdown: alertmarkdownNotes }
+    notes: { markdown: alertmarkdownNotes },
+    info: {
+      inline: true,
+      header: false,
+      text: `
+        # Titledescription
+
+        or documentation about my component, supports markdown
+        `
+    }
   }
 );
-
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
-  ))
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀
-      </span>
-    </Button>
-  ));
