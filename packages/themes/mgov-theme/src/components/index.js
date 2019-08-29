@@ -2,6 +2,16 @@ import HHSLogo from './HHSlogo';
 import MedicaregovLogo from './MedicaregovLogo';
 import Navbar from './Navbar';
 import NavigationMenu from './NavigationMenu';
-import SimpleFooter from '../example-implementations/SimpleFooter/SimpleFooter';
+import ComplexHeader from './ComplexHeader';
+import SimpleFooter from './SimpleFooter';
+import SimpleHeader from './SimpleHeader';
 
-export { HHSLogo, MedicaregovLogo, Navbar, NavigationMenu, SimpleFooter };
+export {
+  HHSLogo,
+  MedicaregovLogo,
+  Navbar,
+  NavigationMenu,
+  ComplexHeader,
+  SimpleFooter,
+  SimpleHeader
+};

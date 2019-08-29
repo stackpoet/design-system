@@ -1,3 +1,6 @@
+@import '@cmsgov/design-system-core/src/index';
+@import '@cmsgov/design-system-support/src/index';
+@import '@cmsgov/design-system-layout/src/index';
 /*
 Navbar
 
@@ -13,7 +16,6 @@ Style guide: components.navbar
 
 [Documentation and guidance content inline]
 */
-
 
 .m-c-navbar {
   @extend .ds-u-display--flex;

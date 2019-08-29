@@ -1,12 +1,12 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _MedicaregovLogo = require("./MedicaregovLogo");
+var _MedicaregovLogo = require('./MedicaregovLogo');
 
-Object.defineProperty(exports, "default", {
+Object.defineProperty(exports, 'default', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_MedicaregovLogo).default;

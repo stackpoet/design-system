@@ -1,12 +1,12 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _CloseSymbol = require("./CloseSymbol");
+var _CloseSymbol = require('./CloseSymbol');
 
-Object.defineProperty(exports, "default", {
+Object.defineProperty(exports, 'default', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CloseSymbol).default;
