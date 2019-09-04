@@ -2,6 +2,7 @@
 @import '@cmsgov/design-system-support/src/index';
 @import '@cmsgov/design-system-layout/src/index';
 @import "../../styles/utilities";
+
 /*
 Simple Footer
 
@@ -11,11 +12,20 @@ This is the description.
 
 [Modifiers]
 
+HTML
 Markup: [filename or inline HTML/EJS]
 
-Style guide: mgov-components.simple-footer
+Style guide: components.simple-footer
 
 [Documentation and guidance content inline]
+*/
+
+/*
+`<SimpleFooter>`
+
+@react-component SimpleFooter
+
+Style guide: components.simple-footer.react
 */
 
 .m-c-footer {
