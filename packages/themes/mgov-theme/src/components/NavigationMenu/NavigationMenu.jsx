@@ -1,8 +1,9 @@
-import { Button } from '@cmsgov/design-system-core/src/components';
+// import { Button } from '@cmsgov/design-system-core/src/components';
+import Button from '../../../../../core/src/components/Button/Button';
+import Close from '../CloseSymbol';
+import Hamburger from '../HamburgerSymbol';
 import React from 'react';
 import className from 'classnames';
-import Hamburger from '../HamburgerSymbol';
-import Close from '../CloseSymbol';
 
 export default class NavigationMenu extends React.PureComponent {
   constructor(props) {

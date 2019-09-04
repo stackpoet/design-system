@@ -1,11 +1,6 @@
+import Navbar from '../NavBar/Navbar';
+import NavigationMenu from '../NavigationMenu/NavigationMenu';
 import React from 'react';
-import { Navbar, NavigationMenu } from '../../components';
-
-// Here is an example way to pass in the settings for a logo, or you can hard-code them into the header below
-const logo = {
-  src: 'https://via.placeholder.com/300x50?text=Placeholder+Logo',
-  alt: 'This is a logo'
-};
 
 const SimpleHeader = ({ logo, menuItems }) => {
   return (
