@@ -4,19 +4,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _Navbar = require('../NavBar/Navbar');
+
+var _Navbar2 = _interopRequireDefault(_Navbar);
+
+var _NavigationMenu = require('../NavigationMenu/NavigationMenu');
+
+var _NavigationMenu2 = _interopRequireDefault(_NavigationMenu);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _components = require('../../components');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Here is an example way to pass in the settings for a logo, or you can hard-code them into the header below
-var logo = {
-  src: 'https://via.placeholder.com/300x50?text=Placeholder+Logo',
-  alt: 'This is a logo'
-};
 
 var SimpleHeader = function SimpleHeader(_ref) {
   var logo = _ref.logo,
@@ -28,7 +28,7 @@ var SimpleHeader = function SimpleHeader(_ref) {
     //   - When inverse == false, the Navbar has a green background and white text
     //   - When inverse == true, the Navbar has a white background with green text
     _react2.default.createElement(
-      _components.Navbar,
+      _Navbar2.default,
       { inverse: false, className: 'm-c-navbar' },
       _react2.default.createElement(
         'a',
@@ -41,7 +41,7 @@ var SimpleHeader = function SimpleHeader(_ref) {
         'Medicare Coverage Tools'
       ),
       _react2.default.createElement(
-        _components.NavigationMenu,
+        _NavigationMenu2.default,
         null,
         menuItems.map(function (item, i) {
           return _react2.default.createElement(

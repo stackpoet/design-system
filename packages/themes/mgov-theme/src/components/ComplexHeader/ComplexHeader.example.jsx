@@ -1,32 +1,26 @@
 import React from 'react';
-import { Navbar, NavigationMenu } from '../../components';
+import ReactDOM from 'react-dom';
+import ComplexHeader from './ComplexHeader';
 
-const Header = ({ logo, menuItems }) => {
-  return (
-    <Navbar inverse className="m-c-navbar">
-      <div className="m-c-navbar__section">
-        <a href="/somewhere">
-          <img {...logo} />
-        </a>
-        <div className="m-c-navbar__productName">Medicare Coverage Tools</div>
-      </div>
-      <div className="m-c-navbar__section m-c-navbar__section--right">
-        <NavigationMenu alwaysShowMenuButton>
-          {menuItems.map((item, i) => (
-            <li key={i} className="m-c-navigationMenu__item">
-              <a href={item.url}>{item.title}</a>
-            </li>
-          ))}
-          <li className="m-c-navigationMenu__item">
-            <hr />
-          </li>
-          <li className="m-c-navigationMenu__item">
-            <a href="/spanish-version-of-site">Español</a>
-          </li>
-        </NavigationMenu>
-      </div>
-    </Navbar>
-  );
+// Here is an example way to pass in the settings for a logo, or you can hard-code them into the header below
+const logoExample = {
+  src: 'https://via.placeholder.com/300x50?text=Placeholder+Logo',
+  alt: 'This is a logo'
 };
 
-export default Header;
+ReactDOM.render(
+  <ComplexHeader
+    logo={logoExample}
+    menuItems={[
+      {
+        url: 'www.gt',
+        title: 'Link 1'
+      },
+      {
+        url: 'www.gt',
+        title: 'Link 2'
+      }
+    ]}
+  />,
+  document.getElementById('js-example')
+);

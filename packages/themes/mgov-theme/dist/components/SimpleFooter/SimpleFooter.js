@@ -8,7 +8,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _components = require('../../components');
+var _HHSLogo = require('../HHSLogo/HHSLogo');
+
+var _HHSLogo2 = _interopRequireDefault(_HHSLogo);
+
+var _MedicaregovLogo = require('../MedicaregovLogo/MedicaregovLogo');
+
+var _MedicaregovLogo2 = _interopRequireDefault(_MedicaregovLogo);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -71,11 +77,11 @@ var SimpleFooter = function SimpleFooter() {
     _react2.default.createElement(
       'div',
       { className: 'm-c-footer__identityRow' },
-      _react2.default.createElement(_components.MedicaregovLogo, null),
+      _react2.default.createElement(_MedicaregovLogo2.default, null),
       _react2.default.createElement(
         'div',
         { className: 'm-c-footer__identityContent' },
-        _react2.default.createElement(_components.HHSLogo, null),
+        _react2.default.createElement(_HHSLogo2.default, null),
         _react2.default.createElement(
           'span',
           { className: 'm-c-footer__contactAddress' },

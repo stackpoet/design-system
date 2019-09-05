@@ -14,11 +14,11 @@ ReactDOM.render(
     menuItems={[
       {
         url: 'www.gt',
-        title: 'title'
+        title: 'Link 1'
       },
       {
         url: 'www.gt',
-        title: 'title'
+        title: 'Link 2'
       }
     ]}
   />,

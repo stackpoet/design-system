@@ -1,5 +1,6 @@
 import React from 'react';
-import { HHSLogo, MedicaregovLogo } from '../../components';
+import HHSLogo from '../HHSLogo/HHSLogo';
+import MedicaregovLogo from '../MedicaregovLogo/MedicaregovLogo';
 
 const SimpleFooter = () => {
   return (
