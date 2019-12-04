@@ -1,3 +1,4 @@
+/* Page utilities (not part of DS) */
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -12,10 +13,29 @@
   max-width: 120ex;
 }
 
+/* End of utilities */
+
 .ds-c-card {
   display: flex;
   flex-direction: column;
 }
+
+/* Equal height cards */
+.ds-c-cards {
+  -webkit-box-align: stretch !important;
+  -ms-flex-align: stretch !important;
+  align-items: stretch !important;
+}
+
+.ds-c-cards .ds-c-card {
+  height: 100%;
+}
+
+.ds-c-cards .ds-c-card article {
+  height: 100%;
+}
+
+/* Include and image in a card */
 
 .ds-c-card figure {
   display: flex;
@@ -32,9 +52,7 @@
   max-width: inherit;
 }
 
-
-
-/* UTILITIES */
+/* DS UTILITIES */
 
 /* Change flex direction */
 .ds-u-flex-direction--row {
@@ -105,18 +123,125 @@
 
 /* borders */
 
+/* Still to do - figure out how to tell the difference if figure is on left or right. Currently only works with left facing figure */
+
 .ds-u-radius--sm {
   border-radius: 3px;
+}
+
+/* Vertical Card border */
+.ds-c-card.ds-u-radius--sm>figure {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.ds-c-card.ds-u-radius--sm>article {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* Horizontal image card borders */
+.ds-u-flex-direction--row.ds-c-card.ds-u-radius--sm>figure {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.ds-u-flex-direction--row.ds-c-card.ds-u-radius--sm>article {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .ds-u-radius--md {
   border-radius: 6px;
 }
 
+/* Vertical Card border */
+.ds-c-card.ds-u-radius--md>figure {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.ds-c-card.ds-u-radius--md>article {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* Horizontal image card borders */
+.ds-u-flex-direction--row.ds-c-card.ds-u-radius--md>figure {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.ds-u-flex-direction--row.ds-c-card.ds-u-radius--md>article {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+
 .ds-u-radius--lg {
   border-radius: 9px;
 }
 
+/* Vertical Card border */
+.ds-c-card.ds-u-radius--lg>figure {
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+
+.ds-c-card.ds-u-radius--lg>article {
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+/* Horizontal image card borders */
+.ds-u-flex-direction--row.ds-c-card.ds-u-radius--lg>figure {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+.ds-u-flex-direction--row.ds-c-card.ds-u-radius--lg>article {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
 .ds-u-radius--xl {
   border-radius: 12px;
+}
+
+/* Vertical Card border */
+.ds-c-card.ds-u-radius--xl>figure {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.ds-c-card.ds-u-radius--xl>article {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Horizontal image card borders */
+.ds-u-flex-direction--row.ds-c-card.ds-u-radius--xl>figure {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.ds-u-flex-direction--row.ds-c-card.ds-u-radius--xl>article {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
