@@ -1,0 +1,108 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ds-u-measure--xwide {
+  max-width: 120ex;
+}
+
+.ds-c-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.ds-c-card--h {
+  display: flex;
+  flex-direction: row;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.ds-c-card img {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: auto;
+}
+
+.ds-c-card--imagebg {
+  padding-bottom: 60%;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 0 !important;
+}
+
+.ds-c-card--h .ds-c-card--imagebg {
+  background-size: cover;
+  background-position: center center;
+  padding: 0;
+}
+
+/* UTILITIES */
+
+/* HR */
+.ds-u-transparent {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.ds-u-space--2 {
+  margin: 16px 0;
+}
+
+.ds-u-space--3 {
+  margin: 24px 0;
+}
+
+.ds-u-space--4 {
+  margin: 32px 0;
+}
+
+.ds-u--stretch {
+  width: 100%;
+}
+
+/* Shadow https://tailwindcss.com/docs/box-shadow/ */
+
+.ds-u-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.ds-u-shadow--md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.ds-u-shadow--lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.ds-u-shadow--xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.ds-u-shadow--2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.ds-u-shadow--inner {
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.ds-u-shadow--outline {
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.ds-u-shadow--none {
+  box-shadow: none;
+}
+
+
+/* borders */
+
+.ds-u-radius--sm {border-radius: 3px;}
+.ds-u-radius--md {border-radius: 6px;}
+.ds-u-radius--lg {border-radius: 9px;}
+.ds-u-radius--xl {border-radius: 12px;}
