@@ -232,7 +232,7 @@
 }
 
 /* Horizontal image card borders */
-.ds-u-flex-direction--row.ds-c-card.ds-u-radius--xl>figure {
+/* .ds-u-flex-direction--row.ds-c-card.ds-u-radius--xl>figure {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-top-left-radius: 12px;
@@ -243,5 +243,21 @@
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-bottom-right-radius: 12px; 
+}*/
+
+.ds-u-flex-direction--row.ds-c-card.ds-u-radius--xl > figure {
+  border-radius: 0;
 }
+
+.ds-u-flex-direction--row.ds-c-card.ds-u-radius--xl > article{
+  border-radius: 0;
+}
+
+/* .ds-u-flex-direction--row.ds-c-card.ds-u-radius--xl figure + article {
+  border-radius: 0;
+}
+
+.ds-u-flex-direction--row.ds-c-card.ds-u-radius--xl article + figure {
+  border-radius: 0;
+} */
