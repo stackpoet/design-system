@@ -5,8 +5,9 @@
 }
 
 .preview__grid {
-  background-color: #f7f7f7;
-  padding: 20px;
+  background-color: #f1f1f1;
+  padding: 16px;
+  margin: 0;
 }
 
 .ds-u-measure--xwide {
@@ -14,6 +15,8 @@
 }
 
 /* End of utilities */
+
+/* Generic cards */
 
 .ds-c-card {
   display: flex;
@@ -59,9 +62,15 @@
   flex-direction: row;
 }
 
+/* Button Utilities */
+
 .ds-u--center {
   margin: 0 auto;
   display: block;
+}
+
+.ds-u--stretch {
+  width: 100%;
 }
 
 /* HR */
@@ -82,9 +91,7 @@
   margin: 32px 0;
 }
 
-.ds-u--stretch {
-  width: 100%;
-}
+
 
 /* Shadow https://tailwindcss.com/docs/box-shadow/ */
 

@@ -10,60 +10,39 @@
 
 <body class="ds-base">
   <section class="ds-u-measure--xwide ds-u-margin-y--5 container">
-    <article>
-      <h2>Classes</h2>
-      <pre>
-          <xmp>
-        .ds-c-card {
-          display: flex;
-          flex-direction: column;
-          min-height: 100%;
-        }
-
-        .ds-c-card .ds-u-image {
-          padding-bottom: 60%;
-          background-size: cover;
-          background-position: center center;
-          margin-bottom: important!;
-        }
-      </xmp> 
-      </pre>
-    </article>
-    <article>
-      <h2>HTML</h2>
-      <pre>
-          <xmp>
-          <!-- Card -->
-
-            <div class="ds-c-card ds-u-margin--2">
-                <article class="ds-u-padding--2">
-
-                  <!--content goes here-->
-
-                </article>
-            </div>
-
-            <!-- Card w/ image -->
-
-              <div class="ds-c-card ds-u-margin--2">
-                <div class="ds-c-card-image" style="background-image: url();"></div>
-                <article class="ds-u-padding--2">
-
-                  <!--content goes here-->
-
-                </article>
-              </div>
-          </xmp>
-      </pre>
-    </article>
-  </section>
-  <section class="ds-u-measure--xwide ds-u-margin-y--5 container">
+    <h1>Cards</h1>
+    <p>These cards are built using flex box and expand to the size of the columns they are added to.</p>
     <!--Plain Card-->
     <article class="ds-l-container">
       <div class="ds-l-row">
         <div class="ds-l-col">
           <h2>Simple Example</h2>
           <p>No styles added</p>
+          <h3>CSS</h3>
+          <pre>
+              <xmp>
+                  /* Generic cards */
+    
+                  .ds-c-card {
+                    display: flex;
+                    flex-direction: column;
+                  }
+          </xmp> 
+          </pre>
+          <h3>HTML</h3>
+          <pre>
+              <xmp>
+              <!-- Generic Card -->
+    
+                <div class="ds-c-card">
+                    <article>
+    
+                      <!--content goes here-->
+    
+                    </article>
+                </div>
+              </xmp>
+          </pre>
         </div>
       </div>
       <div class="ds-l-row preview__grid">
@@ -135,6 +114,29 @@
           <p>
             To get different styled cards, apply utility styles to the
             <code>&lt;article&gt;</code> tag.
+            <pre>
+                <xmp>
+                  <!-- Card 1 utility classes -->
+                  <div class="ds-c-card">
+                      <article class="ds-u-padding--4 ds-u-fill--background-inverse ds-u-color--white ds-u-shadow--lg">
+                      </article>
+                  </div>
+                  
+                  <!-- Card 2 utility classes -->
+
+                  <div class="ds-c-card">
+                      <article class="ds-u-padding--3 ds-u-fill--white ds-u-border--2 ds-u-border--dark">
+                      </article>
+                  </div>
+
+                  <!-- Card 3 utility classes -->
+
+                  <div class="ds-c-card">
+                      <article class="ds-u-padding--4 ds-u-fill--gold ds-u-radius--md ds-u-shadow--md">
+                      </article>
+                  </div>
+                </xmp>
+            </pre>
           </p>
         </div>
       </div>
@@ -169,7 +171,7 @@
         </div>
         <div class="ds-l-col">
           <div class="ds-c-card">
-            <article class="ds-u-padding--3 ds-u-border--2 ds-u-border--dark">
+            <article class="ds-u-padding--3 ds-u-fill--white ds-u-border--2 ds-u-border--dark">
               <h2 class="ds-h2">Legislative Branch</h2>
               <p class="ds-text">
                 The legislative Branch enacts legislation, confirms or rejects Presidential
@@ -206,6 +208,37 @@
               </ul>
             </article>
           </div>
+        </div>
+      </div>
+    </article>
+    <!--Horizontal Cards -->
+    <article class="ds-l-container">
+      <div class="ds-l-row">
+        <div class="ds-l-col">
+          <h2>Horizontal Cards</h2>
+          <p>
+            Add a flex grid layout inside the <code>&lt;article&gt;</code> to build cards with different layouts.
+            <pre>
+                  <xmp>
+                      <div class="ds-c-card">
+                          <article class="ds-u-padding--4 ds-u-fill--white ds-u-shadow--lg ds-u-radius--lg ds-u-border--1">
+                            <div class="ds-l-row ds-u-align-items--center">
+                              <div class="ds-l-col--8">
+
+                                <!-- Content goes here-->
+
+                              </div>
+                              <div class="ds-l-col--4">
+
+                                <!-- Content goes here-->
+
+                              </div>
+                            </div>
+                          </article>
+                      </div>
+                  </xmp>
+              </pre>
+          </p>
         </div>
       </div>
       <div class="ds-l-row preview__grid">
@@ -248,9 +281,49 @@
         <div class="ds-l-col">
           <h2>Cards w/ images</h2>
           <p>
-            To get different styled cards, apply utility styles to the
-            <code>&lt;article&gt;</code> tag.
+            Add a <code>&lt;figure&gt;</code> tag with an <code>&lt;img&gt;</code> above the
+            <code>&lt;article&gt;</code> tag. No need to reformat the image, clipping has been added to make sure the
+            card will stay in the correct aspect ratio.
           </p>
+          <h3>CSS</h3>
+          <pre>
+              <xmp>
+                  /* Include image in a card */
+                  
+                  .ds-c-card figure {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    margin: 0;
+                  }
+                  
+                  .ds-c-card figure img {
+                    flex-shrink: 0;
+                    min-width: 100%;
+                    min-height: 100%;
+                    max-width: inherit;
+                  }
+          </xmp> 
+          </pre>
+          <h3>HTML</h3>
+          <pre>
+              <xmp>
+              
+                <!-- Card w/ image -->
+    
+                <div class="ds-c-card">
+                    <figure>
+                      <img src="https://via.placeholder.com/800x450)" />
+                    </figure>
+                    <article>
+    
+                      <!--content goes here-->
+    
+                    </article>
+                </div>
+              </xmp>
+          </pre>
         </div>
       </div>
       <div class="ds-l-row preview__grid">
@@ -315,8 +388,27 @@
         <div class="ds-l-col">
           <h2>Column Images</h2>
           <p>
-            Apply .ds-c-card--h to get a column layout for cards and images.
+            Apply .ds-u-flex-direction--row to .ds-c-card get a column layout for cards and images.
           </p>
+          </pre>
+          <h3>HTML</h3>
+          <pre>
+              <xmp>
+
+                <!-- Horizontal Card w/ image -->
+    
+                <div class="ds-c-card ds-u-flex-direction--row">
+                    <figure>
+                      <img src="https://via.placeholder.com/800x450)" />
+                    </figure>
+                    <article class="ds-l-col--6">
+    
+                      <!--content goes here-->
+    
+                    </article>
+                </div>
+              </xmp>
+          </pre>
         </div>
       </div>
       <div class="ds-l-row preview__grid">
@@ -382,6 +474,53 @@
           <p>
             If you want all cards to be equal heights
           </p>
+          <h3>CSS</h3>
+          <pre>
+              <xmp>
+                  
+                  /* Equal height cards */
+                  .ds-c-cards {
+                    -webkit-box-align: stretch !important;
+                    -ms-flex-align: stretch !important;
+                    align-items: stretch !important;
+                  }
+                  
+                  .ds-c-cards .ds-c-card {
+                    height: 100%;
+                  }
+                  
+                  .ds-c-cards .ds-c-card article {
+                    height: 100%;
+                  }
+          </xmp> 
+          </pre>
+          <h3>HTML</h3>
+          <pre>
+              <xmp>
+                <!-- Card equal heights -->
+    
+                <div class="ds-l-row ds-c-cards">
+                    <div class="ds-l-col">
+                      <div class="ds-c-card">
+                        <article>
+                        </article>
+                      </div>
+                    </div>
+                    <div class="ds-l-col">
+                      <div class="ds-c-card">
+                        <article>
+                        </article>
+                      </div>
+                    </div>
+                    <div class="ds-l-col">
+                      <div class="ds-c-card">
+                        <article>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+              </xmp>
+          </pre>
         </div>
       </div>
       <div class="ds-l-row ds-c-cards preview__grid">
@@ -456,6 +595,105 @@
       </div>
     </article>
   </section>
+  <section class="ds-u-measure--xwide ds-u-margin-y--5 container">
+    <h2>Utility Classes</h2>
+    <p>Here are some extra utility classes added so cards can look right</p>
+    <h3>Flex direction</h3>
+    <p>This could be added the flex utility. THis is used to get the cards w/ images to format in a horizontal
+      direction.</p>
+    <pre>
+        .ds-u-flex-direction--row {
+          flex-direction: row;
+        }
+    </pre>
+    <h3>Button utilities</h3>
+    <p>Possibly in the button section. If you would like to center buttons or stretch them the entire lenght of the card
+      you would need to apply one of these classes.</p>
+    <pre>
+      .ds-u--center {
+        margin: 0 auto;
+        display: block;
+      }
+      
+      .ds-u--stretch {
+        width: 100%;
+      }
+  </pre>
+  <h3>Hr dividers</h3>
+  <p>Hr's are good ways to divide content without having to add a new row or extra classes.</p>
+  <pre>
+      /* HR */
+      .ds-u-transparent {
+        background-color: transparent;
+        border-color: transparent;
+      }
+      
+      .ds-u-space--2 {
+        margin: 16px 0;
+      }
+      
+      .ds-u-space--3 {
+        margin: 24px 0;
+      }
+      
+      .ds-u-space--4 {
+        margin: 32px 0;
+      }
+  </pre>
+  <h3>Shadows</h3>
+  <p>Medicare.gov uses shadows on their cards.</p>
+  <pre>
+      /* Shadow styles used on https://tailwindcss.com/docs/box-shadow/ */
+
+      .ds-u-shadow {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      }
+      
+      .ds-u-shadow--md {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      
+      .ds-u-shadow--lg {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      
+      .ds-u-shadow--xl {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      
+      .ds-u-shadow--2xl {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+      
+      .ds-u-shadow--inner {
+        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+      }
+      
+      .ds-u-shadow--outline {
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+      }
+      
+      .ds-u-shadow--none {
+        box-shadow: none;
+      }
+  </pre>
+  <h3>Border Radius</h3>
+  <p>Currently there is only one border radius size. THinking about this more, maybe it would be better to just have one border radius size due to adding options adds complications to development and design.</p>
+  <pre>
+      .ds-u-radius--sm {
+        border-radius: 3px;
+      }
+      .ds-u-radius--md {
+        border-radius: 6px;
+      }
+      .ds-u-radius--lg {
+        border-radius: 9px;
+      }
+      .ds-u-radius--xl {
+        border-radius: 12px;
+      }
+  </pre>  
+</section>
 </body>
 
 </html>
