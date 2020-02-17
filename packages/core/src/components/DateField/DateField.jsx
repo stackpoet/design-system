@@ -81,8 +81,7 @@ export class DateField extends React.PureComponent {
       labelClassName: 'ds-u-font-weight--normal ds-u-margin-top--1',
       inversed: this.props.inversed,
       onBlur: (this.props.onBlur || this.props.onComponentBlur) && this.handleBlur,
-      onChange: this.props.onChange && this.handleChange,
-      type: 'number'
+      onChange: this.props.onChange && this.handleChange
     };
     const labelId = this.labelId();
 
@@ -109,8 +108,7 @@ export class DateField extends React.PureComponent {
               this.monthInput = el;
               if (this.props.monthFieldRef) this.props.monthFieldRef(el);
             }}
-            max="12"
-            min="1"
+            pattern="[1-9]|1[0-2]"
             defaultValue={this.props.monthDefaultValue}
             label={this.props.monthLabel}
             name={this.props.monthName}
@@ -127,8 +125,7 @@ export class DateField extends React.PureComponent {
               this.dayInput = el;
               if (this.props.dayFieldRef) this.props.dayFieldRef(el);
             }}
-            max="31"
-            min="1"
+            pattern="[1-9]|[12][0-9]|3[01]"
             defaultValue={this.props.dayDefaultValue}
             label={this.props.dayLabel}
             name={this.props.dayName}
@@ -147,8 +144,6 @@ export class DateField extends React.PureComponent {
             }}
             defaultValue={this.props.yearDefaultValue}
             label={this.props.yearLabel}
-            min={this.props.yearMin}
-            max={this.props.yearMax}
             name={this.props.yearName}
             value={this.props.yearValue}
             aria-describedby={labelId}
