@@ -18,18 +18,12 @@ const packagesRegex = require('../common/packagesRegex');
 const parseReactFile = require('./parseReactFile');
 const path = require('path');
 const processKssSection = require('./processKssSection');
-const runSequence = require('run-sequence');
 const uniquePages = require('./uniquePages');
 
 const docsPkgDirectory = 'packages/docs';
 const reactDataDirectory = `tmp/data`;
 const reactDataFilename = 'react-doc.json';
-const reactDataPath = path.resolve(
-  __dirname,
-  '../../../',
-  reactDataDirectory,
-  reactDataFilename
-);
+const reactDataPath = path.resolve(__dirname, '../../../', reactDataDirectory, reactDataFilename);
 
 /**
  * Some KssSection's are nested under section's that don't exist, so we need
@@ -63,6 +57,12 @@ function addTopLevelPages(kssSections) {
         reference: 'style',
         sections: [],
         weight: 7
+      },
+      {
+        header: 'Utilities',
+        reference: 'utilities',
+        sections: [],
+        weight: 20
       },
       {
         header: 'Components',
@@ -103,21 +103,11 @@ module.exports = (gulp, shared) => {
 
     return Promise.all(
       pages.map(page => {
-        return generatePage(
-          routes,
-          page,
-          shared.docsPath,
-          shared.rootPath
-        ).then(created => {
+        return generatePage(routes, page, shared.docsPath, shared.rootPath).then(created => {
           if (page.sections) {
             return Promise.all(
               page.sections.map(subpage => {
-                return generatePage(
-                  routes,
-                  subpage,
-                  shared.docsPath,
-                  shared.rootPath
-                );
+                return generatePage(routes, subpage, shared.docsPath, shared.rootPath);
               })
             ).then(results => [created].concat(results)); // return results for generatedPagesCount
           }
@@ -136,19 +126,14 @@ module.exports = (gulp, shared) => {
    */
   function generateMarkupPages(kssSections) {
     const pagesWithMarkup = kssSections.filter(
-      page =>
-        !page.hideExample && (page.markup.length > 0 || page.reactExamplePath)
+      page => !page.hideExample && (page.markup.length > 0 || page.reactExamplePath)
     );
 
     return Promise.all(
       pagesWithMarkup.map(page => {
-        return generatePage(
-          null,
-          page,
-          shared.docsPath,
-          shared.rootPath,
-          true
-        ).then(created => [created]);
+        return generatePage(null, page, shared.docsPath, shared.rootPath, true).then(created => [
+          created
+        ]);
       })
     );
   }
@@ -161,22 +146,27 @@ module.exports = (gulp, shared) => {
     return del(buildPath(shared.docsPath, ''));
   });
 
-  // Convenience-task for copying assets to the "public" directory
-  gulp.task('docs:public', ['docs:fonts', 'docs:images']);
-
-  gulp.task('docs:fonts', ['docs:fonts:core', 'docs:fonts:theme']);
-
   gulp.task('docs:fonts:core', () => {
-    dutil.logMessage(
-      '🔡 ',
-      'Copying fonts from core package into "public" directory'
-    );
+    dutil.logMessage('🔡 ', 'Copying fonts from core package into "public" directory');
 
     return gulp
       .src('packages/core/fonts/*')
-      .pipe(
-        gulp.dest(buildPath(shared.docsPath, shared.rootPath, '/public/fonts'))
+      .pipe(gulp.dest(buildPath(shared.docsPath, shared.rootPath, '/public/fonts')));
+  });
+
+  gulp.task('docs:fonts:theme', done => {
+    if (shared.theme) {
+      dutil.logMessage(
+        '🔡 ',
+        `Copying fonts from "${shared.theme}/src/font" directory into "public" directory`
       );
+
+      return gulp
+        .src(`packages/${shared.theme}/src/fonts/**/*`)
+        .pipe(gulp.dest(buildPath(shared.docsPath, shared.rootPath, '/public/fonts')));
+    } else {
+      done();
+    }
   });
 
   gulp.task('docs:fonts:theme', () => {
@@ -188,39 +178,37 @@ module.exports = (gulp, shared) => {
 
       return gulp
         .src(`packages/${shared.theme}/src/fonts/**/*`)
-        .pipe(
-          gulp.dest(
-            buildPath(shared.docsPath, shared.rootPath, '/public/fonts')
-          )
-        );
+        .pipe(gulp.dest(buildPath(shared.docsPath, shared.rootPath, '/public/fonts')));
     }
   });
 
   // The docs use the design system's Sass files, which don't have the
   // images inlined, so we need to be able to reference them by their URL
-  gulp.task('docs:images', ['docs:images:core'], () => {
-    dutil.logMessage(
-      '🏞 ',
-      'Copying images from "src" directory into "public" directory'
-    );
-
-    return gulp
-      .src(`${docsPkgDirectory}/src/**/images/*`)
-      .pipe(gulp.dest(buildPath(shared.docsPath, shared.rootPath, '/public')));
-  });
 
   gulp.task('docs:images:core', () => {
-    dutil.logMessage(
-      '🏞 ',
-      'Copying images from core package into "public" directory'
-    );
+    dutil.logMessage('🏞 ', 'Copying images from core package into "public" directory');
 
     return gulp
       .src('packages/core/images/*')
-      .pipe(
-        gulp.dest(buildPath(shared.docsPath, shared.rootPath, '/public/images'))
-      );
+      .pipe(gulp.dest(buildPath(shared.docsPath, shared.rootPath, '/public/images')));
   });
+
+  gulp.task(
+    'docs:images',
+    gulp.series('docs:images:core', () => {
+      dutil.logMessage('🏞 ', 'Copying images from "src" directory into "public" directory');
+
+      return gulp
+        .src(`${docsPkgDirectory}/src/**/images/*`)
+        .pipe(gulp.dest(buildPath(shared.docsPath, shared.rootPath, '/public')));
+    })
+  );
+
+  gulp.task('docs:fonts', gulp.series('docs:fonts:core', 'docs:fonts:theme'));
+
+  // Convenience-task for copying assets to the "public" directory
+
+  gulp.task('docs:public', gulp.series('docs:fonts', 'docs:images'));
 
   /**
    * Generate HTML pages from CSS and JS comments and Markdown files. This
@@ -234,26 +222,21 @@ module.exports = (gulp, shared) => {
     const mask = /^(?!.*\.(example|test)).*\.(css|less|sass|scss|jsx)$/;
 
     // Parse Markdown files, and return the data in the same format as a KssSection
-    const markdownPagesData = await convertMarkdownPages(
-      shared.rootPath,
-      shared.packages
-    );
+    const markdownPagesData = await convertMarkdownPages(shared.rootPath, shared.packages);
 
     /**
      * Parse KSS documentation blocks in CSS and JSX files
      * kss-node.github.io/kss-node/api/master/module-kss.KssSection.html
      * @return {Array} KssSections
      */
-    const kssSections = await kss
-      .traverse(packages, { mask })
-      .then(styleguide =>
-        Promise.all(
-          styleguide.sections().map(kssSection =>
-            // Cleanup and extend the section's properties
-            processKssSection(kssSection, shared.rootPath)
-          )
+    const kssSections = await kss.traverse(packages, { mask }).then(styleguide =>
+      Promise.all(
+        styleguide.sections().map(kssSection =>
+          // Cleanup and extend the section's properties
+          processKssSection(kssSection, shared.rootPath)
         )
-      );
+      )
+    );
 
     // Merge both sets of KssSection objects into a single array of page parts.
     // Also, remove pages with the same URL (so themes can override existing pages)
@@ -267,28 +250,19 @@ module.exports = (gulp, shared) => {
     // Create HTML files from the pages array
     const generatedPagesCount = await generateDocPages(pages);
 
-    dutil.logMessage(
-      '📝 ',
-      `Added ${generatedPagesCount} docs pages to ./${shared.docsPath}`
-    );
+    dutil.logMessage('📝 ', `Added ${generatedPagesCount} docs pages to ./${shared.docsPath}`);
 
     return Promise.resolve();
   });
 
   // Extract info from React component files for props documentation
   gulp.task('docs:react', () => {
-    dutil.logMessage(
-      '🌪 ',
-      'Generating React propType documentation and grabbing raw example code'
-    );
+    dutil.logMessage('🌪 ', 'Generating React propType documentation and grabbing raw example code');
 
     const packages = packagesRegex(shared.packages);
 
     return gulp
-      .src([
-        `packages/${packages}/src/**/*.jsx`,
-        `!packages/${packages}/src/**/*.test.jsx`
-      ])
+      .src([`packages/${packages}/src/**/*.jsx`, `!packages/${packages}/src/**/*.test.jsx`])
       .pipe(parseReactFile({ nameAfter: 'packages/' }, shared.rootPath))
       .pipe(merge({ fileName: reactDataFilename }))
       .pipe(gulp.dest(reactDataDirectory));
@@ -303,11 +277,15 @@ module.exports = (gulp, shared) => {
 
     dutil.logMessage('🏃 ', message);
 
-    runSequence(
+    return gulp.series(
       'docs:clean',
       'docs:react',
-      ['docs:generate-pages', 'docs:public'],
-      done
-    );
+      'docs:generate-pages',
+      'docs:public',
+      seriesDone => {
+        seriesDone();
+        done();
+      }
+    )();
   });
 };

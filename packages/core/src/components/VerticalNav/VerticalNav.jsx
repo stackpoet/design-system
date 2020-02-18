@@ -3,25 +3,21 @@ import React from 'react';
 import VerticalNavItem from './VerticalNavItem';
 import classNames from 'classnames';
 
-/**
- * A `VerticalNav` component accepts list items as a JSON object and
- * includes additional functionality like collapsible nested menus.
- */
 export class VerticalNav extends React.PureComponent {
   renderItems() {
     return this.props.items.map(item => {
       let onClick = item.onClick || this.props.onLinkClick;
-      const selected =
-        item.selected ||
-        (this.props.selectedId && this.props.selectedId === item.id);
-
       if (!onClick) {
         onClick = undefined;
       }
 
+      const selected =
+        item.selected || (this.props.selectedId && this.props.selectedId === item.id);
+
       return (
         <VerticalNavItem
           {...item}
+          component={this.props.component || item.component}
           _selectedId={this.props.selectedId}
           key={item.id + item.url + item.label}
           onClick={onClick}
@@ -63,6 +59,12 @@ VerticalNav.propTypes = {
    */
   collapsed: PropTypes.bool,
   /**
+   * When provided, this will render the passed in component for all `VerticalNavItem`s. This is useful when
+   * integrating with React Router's `<Link>` or using your own custom component.
+   * If more specific control is needed, each `VerticalNavItem` object also accepts a `component` prop.
+   */
+  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  /**
    * The `id` of the selected `VerticalNavItem`. This will also set the
    * `selected` prop on the item's parents.
    */
@@ -71,7 +73,7 @@ VerticalNav.propTypes = {
   /**
    * An array of `VerticalNavItem` data objects
    */
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape(PropTypes.object)).isRequired,
   /**
    * Indicates this list is nested within another nav item.
    */

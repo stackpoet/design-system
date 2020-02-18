@@ -6,16 +6,13 @@ import Select from './Select';
 import classNames from 'classnames';
 import uniqueId from 'lodash.uniqueid';
 
-/**
- * A `ChoiceList` component can be used to render a select menu, radio
- * button group, or checkbox group.
- *
- * By default the component determines the type of field for you, taking
- * into account accessibility and usability best practices. So, you can pass in
- * an array of `choices` and let it determine what type of field would be best for
- * the user, or alternatively you can manually pass in the `type` prop.
- */
 export class ChoiceList extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.handleBlur = this.handleBlur.bind(this);
+    this.choiceRefs = [];
+  }
+
   /**
    * Creates the field component(s) based on the type of field we've determined
    * it should be.
@@ -41,9 +38,13 @@ export class ChoiceList extends React.PureComponent {
         props.disabled = props.disabled || this.props.disabled;
         props.inversed = this.props.inversed;
         props.name = this.props.name;
-        props.onBlur = this.props.onBlur;
+        props.onBlur = (this.props.onBlur || this.props.onComponentBlur) && this.handleBlur;
         props.onChange = this.props.onChange;
         props.type = type;
+        props.inputRef = ref => {
+          this.choiceRefs.push(ref);
+        };
+        props.size = this.props.size;
       }
 
       return (
@@ -122,12 +123,30 @@ export class ChoiceList extends React.PureComponent {
     return 'radio';
   }
 
+  handleBlur(evt) {
+    if (this.props.onBlur) {
+      this.props.onBlur(evt);
+    }
+
+    if (this.props.onComponentBlur) {
+      this.handleComponentBlur(evt);
+    }
+  }
+
+  handleComponentBlur(evt) {
+    // The active element is always the document body during a focus
+    // transition, so in order to check if the newly focused element
+    // is one of our choices, we're going to have to wait a bit.
+    setTimeout(() => {
+      if (!this.choiceRefs.includes(document.activeElement)) {
+        this.props.onComponentBlur(evt);
+      }
+    }, 20);
+  }
+
   render() {
     const type = this.type();
-    const classes = classNames(
-      { 'ds-c-fieldset': type !== 'select' },
-      this.props.className
-    );
+    const classes = classNames({ 'ds-c-fieldset': type !== 'select' }, this.props.className);
     const RootComponent = type === 'select' ? 'div' : 'fieldset';
     const FormLabelComponent = type === 'select' ? 'label' : 'legend';
 
@@ -204,12 +223,21 @@ ChoiceList.propTypes = {
    * The field's `name` attribute
    */
   name: PropTypes.string.isRequired,
+  /**
+   * Called anytime any choice is blurred
+   */
   onBlur: PropTypes.func,
+  /**
+   * Called when any choice is blurred and the focus does not land on one
+   * of the other choices inside this component (i.e., when the whole
+   * component loses focus)
+   */
+  onComponentBlur: PropTypes.func,
   onChange: PropTypes.func,
   /**
-   * If the component renders a select, set the max-width of the input either to `'small'` or `'medium'`.
+   * Sets the size of the checkbox or radio button
    */
-  size: PropTypes.oneOf(['small', 'medium']),
+  size: PropTypes.oneOf(['small']),
   /**
    * You can manually set the `type` if you prefer things to be less magical.
    * Otherwise, the type will be inferred by the other `props`, based
@@ -217,9 +245,9 @@ ChoiceList.propTypes = {
    * `checkbox` fields will be rendered. If less than 10 choices are passed in,
    * then `radio` buttons will be rendered.
    */
-  type: PropTypes.oneOf(['checkbox', 'radio', 'select']),
+  type: PropTypes.oneOf(['checkbox', 'radio']),
   /**
-   * Adds `aria-label` attribute if component renders a select
+   * (Deprecated) Adds `aria-label` attribute if component renders a select
    */
   ariaLabel: PropTypes.string
 };

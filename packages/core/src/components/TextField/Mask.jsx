@@ -1,11 +1,3 @@
-/*
-Masked field
-
-A masked field is an enhanced input field that provides visual and non-visual
-cues to a user about the expected value.
-
-Style guide: components.masked-field
-*/
 import 'core-js/fn/array/includes';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -139,25 +131,6 @@ export function maskValue(value = '', mask) {
   return value;
 }
 
-/*
-`<TextField mask={...}>`
-
-Passing a `mask` prop into the `TextField` component with a valid value will
-enable formatting to occur when the field is blurred. To "unmask" the
-value, you can import and call the `unmaskValue` method.
-
-@react-component TextField
-
-@react-example Mask
-
-Style guide: components.masked-field.react
-*/
-
-/**
- * A Mask component renders a controlled input field. When the
- * field is blurred, it applies formatting to improve the readability
- * of the value.
- */
 export class Mask extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -188,10 +161,7 @@ export class Mask extends React.PureComponent {
       // given and what we have locally don't match, that means the controlling
       // component has made its own unrelated change, so we should update our
       // state and mask this new value.
-      if (
-        unmaskValue(fieldProps.value, mask) !==
-        unmaskValue(this.state.value, mask)
-      ) {
+      if (unmaskValue(fieldProps.value, mask) !== unmaskValue(this.state.value, mask)) {
         const value = maskValue(fieldProps.value || '', mask);
         this.setState({ value }); // eslint-disable-line react/no-did-update-set-state
       }
@@ -220,8 +190,7 @@ export class Mask extends React.PureComponent {
     // We only debounce the onBlur when we know for sure that
     // this component will re-render (AKA when the value changes)
     // and when an onBlur callback is present
-    const debounce =
-      value !== this.state.value && typeof field.props.onBlur === 'function';
+    const debounce = value !== this.state.value && typeof field.props.onBlur === 'function';
 
     if (debounce) {
       // We need to retain a reference to the event after the callback

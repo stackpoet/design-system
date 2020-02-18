@@ -2,16 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Step from './Step';
 
-/**
- * The `StepList` component is the preferred method for building a step list,
- * since it handles all the state logic necessary to produce its markup. A
- * step is represented by an object with text, progress, and routing information
- * and can optionally include an array of substeps as well as a description.
- */
 export const StepList = ({ steps, ...props }) => (
   <ol className="ds-c-step-list ds-u-margin-top--4">
     {steps.map((step, i) => (
-      <Step step={step} key={step.id || i} {...props} />
+      <Step
+        step={{ ...step, ...{ component: props.component || step.component } }}
+        key={step.id || i}
+        {...props}
+      />
     ))}
   </ol>
 );
@@ -28,7 +26,8 @@ export const stepShape = {
   completed: PropTypes.bool,
   started: PropTypes.bool,
   isNextStep: PropTypes.bool,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
 };
 stepShape.steps = PropTypes.arrayOf(PropTypes.shape(stepShape));
 
@@ -51,6 +50,12 @@ StepList.propTypes = {
    * and [Step object]({{root}}/patterns/step-list/#patterns.step-list.step-object)
    */
   steps: PropTypes.arrayOf(PropTypes.shape(stepShape)).isRequired,
+  /**
+   * When provided, this will render the passed in component for all link elements. This is useful when
+   * integrating with React Router's `<Link>` or using your own custom component.
+   * If more specific control is needed, each `step` object also accepts a `component` prop.
+   */
+  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /**
    * Whether or not to render a substep's substeps.
    */

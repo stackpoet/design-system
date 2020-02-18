@@ -7,20 +7,24 @@ import uniqueId from 'lodash.uniqueid';
 
 export { unmaskValue } from './Mask';
 
-/**
- * A `TextField` component renders an input field as well as supporting UI
- * elements like a label, error message, and hint text.
- */
 export class TextField extends React.PureComponent {
   constructor(props) {
     super(props);
     this.id = props.id || uniqueId('textfield_');
     this.labelId = props.labelId || uniqueId('textfield_label_');
+
+    if (process.env.NODE_ENV !== 'production') {
+      if (props.fieldRef) {
+        console.warn(
+          `[Deprecated]: Please remove the 'fieldRef' prop in <TextField>, use 'inputRef' instead. This prop has been renamed and will be removed in a future release.`
+        );
+      }
+    }
   }
 
   componentDidMount() {
     if (this.props.focusTrigger) {
-      this.loader && this.loader.focus();
+      this.focusRef && this.focusRef.focus();
     }
   }
 
@@ -60,11 +64,7 @@ export class TextField extends React.PureComponent {
       };
 
       return (
-        <div
-          className={`ds-c-field__before ds-c-field__before--${
-            this.props.mask
-          }`}
-        >
+        <div className={`ds-c-field__before ds-c-field__before--${this.props.mask}`}>
           {content[this.props.mask]}
         </div>
       );
@@ -82,6 +82,7 @@ export class TextField extends React.PureComponent {
       hint,
       id,
       inversed,
+      inputRef,
       label,
       labelClassName,
       labelId,
@@ -93,7 +94,6 @@ export class TextField extends React.PureComponent {
       type,
       ...fieldProps
     } = this.props;
-
     const FieldComponent = multiline ? 'textarea' : 'input';
     const _rows = multiline && rows ? rows : undefined;
 
@@ -119,7 +119,18 @@ export class TextField extends React.PureComponent {
         className={fieldClasses}
         id={this.id}
         /* eslint-disable no-return-assign */
-        ref={focusTrigger ? loader => (this.loader = loader) : fieldRef}
+        ref={ref => {
+          if (focusTrigger) {
+            this.focusRef = ref;
+          } else {
+            if (inputRef) {
+              inputRef(ref);
+            }
+            if (fieldRef) {
+              fieldRef(ref);
+            }
+          }
+        }}
         /* eslint-enable no-return-assign */
         rows={_rows}
         type={multiline ? undefined : type}
@@ -173,7 +184,7 @@ TextField.propTypes = {
    */
   fieldClassName: PropTypes.string,
   /**
-   * Access a reference to the `input` or `textarea` element
+   * (Deprecated) Access a reference to the `input` or `textarea` element. Please use `inputRef` instead.
    */
   fieldRef: PropTypes.func,
   /**
@@ -189,6 +200,10 @@ TextField.propTypes = {
    */
   id: PropTypes.string,
   /**
+   * Access a reference to the `input` or `textarea` element
+   */
+  inputRef: PropTypes.func,
+  /**
    * Text showing the requirement ("Required", "Optional", etc.). See [Required and Optional Fields]({{root}}/guidelines/forms/#required-and-optional-fields).
    */
   requirementLabel: PropTypes.node,
@@ -201,7 +216,7 @@ TextField.propTypes = {
    */
   label: PropTypes.node.isRequired,
   /**
-   * Additional classes to be added to the label
+   * Additional classes to be added to the `FormLabel`.
    */
   labelClassName: PropTypes.string,
   /**
@@ -214,14 +229,6 @@ TextField.propTypes = {
    * field's appearance and functionality may be affected.
    */
   mask: PropTypes.oneOf(['currency', 'phone', 'ssn', 'zip']),
-  /**
-   * `max` HTML input attribute
-   */
-  max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  /**
-   * `min` HTML input attribute
-   */
-  min: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /**
    * Whether or not the text field is a multiline text field
    */

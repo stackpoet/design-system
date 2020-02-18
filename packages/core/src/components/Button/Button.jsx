@@ -13,6 +13,18 @@ import classNames from 'classnames';
  * you could pass in a `target` prop to pass to the rendered anchor element.
  */
 export class Button extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    if (process.env.NODE_ENV !== 'production') {
+      if (props.buttonRef) {
+        console.warn(
+          `[Deprecated]: Please remove the 'buttonRef' prop in <Button>, use 'inputRef' instead. This prop has been renamed and will be removed in a future release.`
+        );
+      }
+    }
+  }
+
   // Get an object of props to pass to the rendered <Button> component
   attrs() {
     /**
@@ -25,6 +37,7 @@ export class Button extends React.PureComponent {
     const {
       className,
       component,
+      inputRef,
       inverse,
       onClick,
       size,
@@ -46,25 +59,18 @@ export class Button extends React.PureComponent {
   }
 
   classNames() {
-    let variationClass =
-      this.props.variation && `ds-c-button--${this.props.variation}`;
-    let disabledClass = this.props.disabled && 'ds-c-button--disabled';
-
-    if (this.props.inverse) {
-      if (disabledClass) {
-        disabledClass += '-inverse';
-      } else if (variationClass) {
-        variationClass += '-inverse';
-      } else {
-        variationClass = 'ds-c-button--inverse';
-      }
-    }
+    const variationClass = this.props.variation && `ds-c-button--${this.props.variation}`;
+    const disabledClass =
+      this.props.disabled && (this.props.href || this.props.component) && 'ds-c-button--disabled';
+    const sizeClass = this.props.size && `ds-c-button--${this.props.size}`;
+    const inverseClass = this.props.inverse && 'ds-c-button--inverse';
 
     return classNames(
       'ds-c-button',
       disabledClass,
-      !disabledClass && variationClass,
-      this.props.size && `ds-c-button--${this.props.size}`,
+      variationClass,
+      inverseClass,
+      sizeClass,
       this.props.className
     );
   }
@@ -81,6 +87,9 @@ export class Button extends React.PureComponent {
 
     if (this.props.component) {
       ComponentType = this.props.component;
+      // Assume `component` is not a <button>
+      delete attrs.disabled;
+      delete attrs.type;
     } else if (this.props.href) {
       ComponentType = 'a';
       // Remove <button> specific attributes
@@ -89,7 +98,7 @@ export class Button extends React.PureComponent {
     }
 
     return (
-      <ComponentType ref={this.props.buttonRef} {...attrs}>
+      <ComponentType ref={this.props.inputRef || this.props.buttonRef} {...attrs}>
         {this.props.children}
       </ComponentType>
     );
@@ -115,6 +124,10 @@ Button.propTypes = {
    * rather than `button`.
    */
   href: PropTypes.string,
+  /**
+   * Access a reference to the `button` or `a` element
+   */
+  inputRef: PropTypes.func,
   /** Applies the inverse theme styling */
   inverse: PropTypes.bool,
   /**
@@ -123,7 +136,7 @@ Button.propTypes = {
    */
   onClick: PropTypes.func,
   /**
-   * Access a reference to the `button` or `a` element
+   * (Deprecated) Access a reference to the `button` or `a` element. Please use `inputRef` instead.
    */
   buttonRef: PropTypes.func,
   size: PropTypes.oneOf(['small', 'big']),
@@ -132,9 +145,9 @@ Button.propTypes = {
    */
   type: PropTypes.oneOf(['button', 'submit']),
   /**
-   * A string corresponding to the button-component variation classes (`primary`, `danger`, `success`, `transparent`)
+   * A string corresponding to the button-component variation classes
    */
-  variation: PropTypes.string
+  variation: PropTypes.oneOf(['primary', 'danger', 'success', 'transparent'])
 };
 
 export default Button;

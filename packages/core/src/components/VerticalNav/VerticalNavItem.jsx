@@ -15,10 +15,7 @@ export class VerticalNavItem extends React.PureComponent {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (
-      this.props.onSubnavToggle &&
-      prevState.collapsed !== this.state.collapsed
-    ) {
+    if (this.props.onSubnavToggle && prevState.collapsed !== this.state.collapsed) {
       this.props.onSubnavToggle(this.props.id, this.state.collapsed);
     }
   }
@@ -77,10 +74,7 @@ export class VerticalNavItem extends React.PureComponent {
   childIsSelected(children) {
     if (children && children.length) {
       return children.some(child => {
-        return (
-          child.id === this.props._selectedId ||
-          this.childIsSelected(child.items)
-        );
+        return child.id === this.props._selectedId || this.childIsSelected(child.items);
       });
     }
 
@@ -109,6 +103,7 @@ export class VerticalNavItem extends React.PureComponent {
           collapsed={this.state.collapsed}
           id={this.subnavId}
           items={this.subnavItems()}
+          component={this.props.component}
           nested
         />
       );
@@ -121,11 +116,10 @@ export class VerticalNavItem extends React.PureComponent {
     return (
       <li className={classes}>
         <VerticalNavItemLabel
-          ariaCollapsedStateButtonLabel={
-            this.props.ariaCollapsedStateButtonLabel
-          }
+          ariaCollapsedStateButtonLabel={this.props.ariaCollapsedStateButtonLabel}
           ariaExpandedStateButtonLabel={this.props.ariaExpandedStateButtonLabel}
           collapsed={this.state.collapsed}
+          component={this.props.component}
           label={this.props.label}
           hasSubnav={this.hasSubnav()}
           onClick={this.handleLabelClick}
@@ -140,7 +134,7 @@ export class VerticalNavItem extends React.PureComponent {
 }
 
 VerticalNavItem.defaultProps = {
-  // Unfortunately, we're defining these default ARIA pros here and in
+  // Unfortunately, we're defining these default ARIA props here and in
   // VerticalNavItemLabel. We define them here so they show in the docs.
   // TODO(sawyer): Update react-docgen so we don't have to do this
   ariaCollapsedStateButtonLabel: 'Expand sub-navigation',
@@ -163,6 +157,11 @@ VerticalNavItem.propTypes = {
    * Additional classes to be added to the root element
    */
   className: PropTypes.string,
+  /**
+   * When provided, this will render the passed in component. This is useful when
+   * integrating with React Router's `<Link>` or using your own custom component.
+   */
+  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /**
    * Whether or not the item's sub-navigation is in a collapsed state by default
    */

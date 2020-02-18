@@ -6,7 +6,7 @@
 const babel = require('gulp-babel');
 const del = require('del');
 const dutil = require('./common/log-util');
-const runSequence = require('run-sequence');
+const runSequence = require('gulp4-run-sequence');
 
 module.exports = (gulp, shared) => {
   const babelTasks = shared.packages.map(pkg => `build:babel:${pkg}`);
@@ -29,7 +29,8 @@ module.exports = (gulp, shared) => {
           `packages/${pkg}/src/**/*.{js,jsx}`,
           `!packages/${pkg}/src/**/{__mocks__,__tests__}/*.{js,jsx}`,
           `!packages/${pkg}/src/**/*.example.{js,jsx}`,
-          `!packages/${pkg}/src/**/*.test.{js,jsx}`
+          `!packages/${pkg}/src/**/*.test.{js,jsx}`,
+          `!packages/${pkg}/src/helpers/e2e/*.{js,jsx}`
         ])
         .pipe(babel())
         .pipe(gulp.dest(`packages/${pkg}/dist`));
@@ -59,17 +60,20 @@ module.exports = (gulp, shared) => {
    * directory, so once everything is built with the proper relative URLs, we
    * move everything into the root of the directory.
    */
-  gulp.task('build:gh-pages', () => {
+  gulp.task('build:gh-pages', done => {
     if (shared.rootPath !== '') {
       dutil.logMessage('🤝 ', 'Moving files to root of docs directory');
       return gulp
         .src(`${shared.docsPath}/${shared.rootPath}/**/*`)
         .pipe(gulp.dest(shared.docsPath));
+    } else {
+      done();
     }
   });
 
-  gulp.task('build:success', () => {
+  gulp.task('build:success', done => {
     dutil.logMessage('✅ ', 'Build succeeded');
+    done();
   });
 
   /**

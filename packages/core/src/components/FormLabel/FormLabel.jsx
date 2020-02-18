@@ -2,11 +2,18 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
-/**
- * The `FormLabel` component provides the `label` (or `legend`) for a field,
- * along with any associated hint text and error message.
- */
 export class FormLabel extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    if (process.env.NODE_ENV !== 'production') {
+      if (props.labelClassName) {
+        console.warn(
+          `[Deprecated]: Please remove the 'labelClassName' prop in <FormLabel>, use 'textClassName' instead. This prop has been renamed and will be removed in a future release.`
+        );
+      }
+    }
+  }
   errorMessage() {
     if (this.props.errorMessage) {
       const classes = classNames('ds-c-field__hint', 'ds-u-color--error', {
@@ -14,11 +21,7 @@ export class FormLabel extends React.PureComponent {
       });
 
       return (
-        <span
-          className={classes}
-          id={`${this.props.fieldId}-message`}
-          role="alert"
-        >
+        <span className={classes} id={`${this.props.fieldId}-message`} role="alert">
           {this.props.errorMessage}
         </span>
       );
@@ -60,16 +63,16 @@ export class FormLabel extends React.PureComponent {
   render() {
     const { fieldId, id, children } = this.props;
     const ComponentType = this.props.component;
-    const labelTextClasses = classNames(this.props.labelClassName);
+    const textClasses = classNames(this.props.labelClassName, this.props.textClassName);
     const classes = classNames('ds-c-label', this.props.className, {
       'ds-c-label--inverse': this.props.inversed
     });
 
     return (
       <ComponentType className={classes} htmlFor={fieldId} id={id}>
-        <span className={labelTextClasses}>{children}</span>
-        {this.errorMessage()}
+        <span className={textClasses}>{children}</span>
         {this.hint()}
+        {this.errorMessage()}
       </ComponentType>
     );
   }
@@ -79,18 +82,9 @@ FormLabel.defaultProps = { component: 'label' };
 FormLabel.propTypes = {
   children: PropTypes.node.isRequired,
   /**
-   * A unique `id` for the label element. Useful for referencing the label from
-   * other components with `aria-describedby`.
-   */
-  id: PropTypes.string,
-  /**
    * Additional classes to be added to the root element.
    */
   className: PropTypes.string,
-  /**
-   * Additional classes to be added to the label text.
-   */
-  labelClassName: PropTypes.string,
   /** The root HTML element used to render the label */
   component: PropTypes.oneOf(['label', 'legend']),
   /** Enable the error state by providing an error message. */
@@ -105,15 +99,28 @@ FormLabel.propTypes = {
    */
   hint: PropTypes.node,
   /**
+   * A unique `id` for the label element. Useful for referencing the label from
+   * other components with `aria-describedby`.
+   */
+  id: PropTypes.string,
+  /**
+   * Set to `true` to apply the "inverse" theme
+   */
+  inversed: PropTypes.bool,
+  /**
+   * (Deprecated) Additional classes to be added to the label text. Please use `textClassName` instead.
+   */
+  labelClassName: PropTypes.string,
+  /**
    * Text showing the requirement (ie. "Optional", or "Required").
    * In most cases, this should be used to indicate which fields are optional.
    * See the [form guidelines]({{root}}/guidelines/forms/) for more info.
    */
   requirementLabel: PropTypes.node,
   /**
-   * Set to `true` to apply the "inverse" theme
+   * Additional classes to be added to the label text.
    */
-  inversed: PropTypes.bool
+  textClassName: PropTypes.string
 };
 
 export default FormLabel;

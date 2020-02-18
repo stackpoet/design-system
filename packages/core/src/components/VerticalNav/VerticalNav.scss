@@ -1,46 +1,19 @@
 @import '@cmsgov/design-system-support/src/index';
 
-/*
-Vertical navigation
+%nav-item-hover {
+  background-color: $color-gray-lightest;
+  color: $color-primary;
+  text-decoration: none;
+}
 
-Hierarchical, vertical navigation.
+%nav-item-focus {
+  background-color: $focus-color;
+  border-color: $color-base;
+  box-shadow: none;
+  color: $color-base;
+  outline: 0 none;
+}
 
-@uswds https://standards.usa.gov/components/sidenav/
-
-Markup:
-<ul class="ds-c-vertical-nav">
-  <li class="ds-c-vertical-nav__item">
-    <a class="ds-c-vertical-nav__label" href="javascript:void(0);">Parent link</a>
-  </li>
-  <li class="ds-c-vertical-nav__item">
-    <button class="ds-c-vertical-nav__label ds-c-vertical-nav__label--current ds-c-vertical-nav__label--parent" title="Collapse sub-navigation" aria-expanded="true">Current page</button>
-    <ul class="ds-c-vertical-nav__subnav">
-      <li class="ds-c-vertical-nav__item">
-        <a class="ds-c-vertical-nav__label" href="javascript:void(0);">Child link</a>
-      </li>
-      <li class="ds-c-vertical-nav__item">
-        <button class="ds-c-vertical-nav__label ds-c-vertical-nav__label--current ds-c-vertical-nav__label--parent" title="Collapse sub-navigation" aria-expanded="true">Child link</button>
-        <ul class="ds-c-vertical-nav__subnav">
-          <li class="ds-c-vertical-nav__item">
-            <a class="ds-c-vertical-nav__label" href="javascript:void(0);">Grandchild link</a>
-          </li>
-          <li class="ds-c-vertical-nav__item">
-            <a class="ds-c-vertical-nav__label ds-c-vertical-nav__label--current" href="javascript:void(0);">Grandchild link</a>
-          </li>
-        </ul>
-      </li>
-      <li class="ds-c-vertical-nav__item">
-        <a class="ds-c-vertical-nav__label" href="javascript:void(0);">Child link</a>
-      </li>
-    </ul>
-  </li>
-  <li class="ds-c-vertical-nav__item">
-    <a class="ds-c-vertical-nav__label" href="javascript:void(0);">Parent link</a>
-  </li>
-</ul>
-
-Style guide: components.vertical-nav
-*/
 .ds-c-vertical-nav {
   @include ds-unstyled-list;
 
@@ -58,7 +31,8 @@ Style guide: components.vertical-nav
   position: relative;
 }
 
-.ds-c-vertical-nav__label {
+.ds-c-vertical-nav__label,
+.ds-c-vertical-nav__label:visited {
   border-left: 4px solid transparent;
   color: $color-base;
   display: block;
@@ -68,12 +42,15 @@ Style guide: components.vertical-nav
   padding: $spacer-1 $spacer-2;
   text-align: left; // necessary for <button>
   text-decoration: none;
-}
 
-.ds-c-vertical-nav__label--current {
-  border-left-color: $color-primary;
-  color: $color-primary;
-  font-weight: $font-bold;
+  &:hover {
+    @extend %nav-item-hover;
+  }
+
+  &:focus,
+  &.ds-c-vertical-nav__label--current:focus {
+    @extend %nav-item-focus;
+  }
 }
 
 // Subnav toggle
@@ -96,14 +73,22 @@ Style guide: components.vertical-nav
   &[aria-expanded='true'] {
     background-image: url('#{$image-path}/arrow-up.svg');
   }
+
+  &:hover {
+    @extend %nav-item-hover;
+  }
+
+  &:focus,
+  &.ds-c-vertical-nav__label--current:focus {
+    @extend %nav-item-focus;
+  }
 }
 
-/* stylelint-disable-next-line selector-no-qualifying-type */
-a.ds-c-vertical-nav__label:hover,
-.ds-c-vertical-nav__label--parent:hover {
-  background-color: $color-gray-lightest;
+.ds-c-vertical-nav__label--current,
+.ds-c-vertical-nav__label--current:visited {
+  border-left-color: $color-primary;
   color: $color-primary;
-  text-decoration: none;
+  font-weight: $font-bold;
 }
 
 .ds-c-vertical-nav__subnav {
@@ -123,64 +108,3 @@ a.ds-c-vertical-nav__label:hover,
     padding-left: $spacer-4;
   }
 }
-
-/*
-`<VerticalNav>`
-
-@react-component VerticalNav
-
-Style guide: components.vertical-nav.VerticalNav
-*/
-
-/*
-`<VerticalNavItem>`
-
-@hide-example
-
-@react-component VerticalNavItem
-
-Style guide: components.vertical-nav.VerticalNavItem
-*/
-
-/*
----
-
-## When to use
-
-- To display a navigational hierarchy with one to three levels.
-- To display the “sub-navigation” within a section of the website.
-
-## When to consider alternatives
-
-- If the site has fewer than five pages, consider organizing the page without a navigational hierarchy.
-- If your page already has a horizontal and vertical navigation bar, consider ways to simplify your navigation system.
-- If your content is within a frame or sub-area of a page, consider ways to simplify your navigation system.
-
-## Guidance
-
-- Indicate where a user is within the navigational hierarchy. Use the `ds-c-vertical-nav__label--current` modifier to show users which page they have navigated to.
-- Keep the navigation links short and follow sentence case. They can be shorter derivatives of page titles themselves.
-- If the navigation hierarchy is too long, users may miss items at the bottom. If it’s too deep, users may miss items that require too many clicks. Usability test to find the right balance between breadth and depth.
-
-## Accessibility
-
-- Users should be able to tab through each link.
-- If you have nested menus that are collapsible, ensure the toggle button has its `aria-controls` and `aria-expanded` attributes set. This is done automatically for you
-if you're using the React components.
-- If your navigation list is longer than 3 items, consider using a skip navigation link. This allows screen reader and keyboard users to skip to the main content area(s).
-- If a skip navigation link is not an option, consider using:
-  * A valid, descriptive page header
-  * Landmark regions like `<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>`
-  * A `role` attribute like `<div role="navigation">`
-
-## Related patterns
-
-- [Tabs](/components/tabs)
-
-## Learn more
-
-- [18F Content Guide \- Heading capitalization](https://content-guide.18f.gov/capitalization/#headings)
-- [18F Content Guide \- Headings and titles](https://content-guide.18f.gov/headings-and-titles/)
-
-Style guide: components.vertical-nav.guidance
-*/
