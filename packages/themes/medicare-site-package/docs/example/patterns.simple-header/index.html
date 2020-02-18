@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Example: patterns.simple-header</title>
+  <link rel="stylesheet" href="/public/styles/example.css" />
+</head>
+<body class="ds-base">
+  <div id="js-example"></div>
+      <script type="text/javascript" src="/public/scripts/example.js"></script>
+      <script type="text/javascript">/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./packages/themes/medicare-site-package/src/components/SimpleHeader/SimpleHeader.example.jsx");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/webpack/buildin/global.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn this;\n})();\n\ntry {\n\t// This works if eval is allowed (see CSP)\n\tg = g || new Function(\"return this\")();\n} catch (e) {\n\t// This works if the window reference is available\n\tif (typeof window === \"object\") g = window;\n}\n\n// g can still be undefined, but nothing to do about it...\n// We return undefined, instead of nothing here, so it's\n// easier to handle this case. if(!global) { ...}\n\nmodule.exports = g;\n\n\n//# sourceURL=webpack:///(webpack)/buildin/global.js?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Alert/Alert.jsx":
+/*!**********************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Alert/Alert.jsx ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (8:13)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|   heading() {\\n|     if (this.props.heading) {\\n>       return <h3 className=\\\"ds-c-alert__heading\\\">{this.props.heading}</h3>;\\n|     }\\n|   }\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Alert/Alert.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Autocomplete/Autocomplete.jsx":
+/*!************************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Autocomplete/Autocomplete.jsx ***!
+  \************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (41:8)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|     if (this.props.loading) {\\n|       return (\\n>         <li className=\\\"ds-c-autocomplete__list-item--message\\\">\\n|           {this.props.loadingMessage}\\n|         </li>\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Autocomplete/Autocomplete.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Badge/Badge.jsx":
+/*!**********************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Badge/Badge.jsx ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (5:9)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n| export const Badge = props => {\\n>   return <span className=\\\"ds-c-badge\\\">{props.children}</span>;\\n| };\\n| \");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Badge/Badge.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Button/Button.jsx":
+/*!************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Button/Button.jsx ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (90:11)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|     }\\n| \\n>     return <ComponentType {...attrs}>{this.props.children}</ComponentType>;\\n|   }\\n| }\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Button/Button.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/Choice.jsx":
+/*!****************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/Choice.jsx ***!
+  \****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (107:6)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|     return (\\n>       <div\\n|         className={className}\\n|         aria-live={checkedChildren ? 'polite' : null}\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/Choice.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/ChoiceList.jsx":
+/*!********************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/ChoiceList.jsx ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (50:8)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|       return (\\n>         <ChoiceComponent key={choice.value} {...props}>\\n|           {label}\\n|         </ChoiceComponent>\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/ChoiceList.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/Select.jsx":
+/*!****************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/Select.jsx ***!
+  \****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (50:6)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|     return (\\n>       <select\\n|         className={classes}\\n|         id={id}\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/Select.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/DateField/DateField.jsx":
+/*!******************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/DateField/DateField.jsx ***!
+  \******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (79:6)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|     return (\\n>       <fieldset className=\\\"ds-c-fieldset\\\">\\n|         <FormLabel\\n|           component=\\\"legend\\\"\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/DateField/DateField.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Dialog/Dialog.jsx":
+/*!************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Dialog/Dialog.jsx ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (39:4)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|   /* eslint-disable jsx-a11y/no-redundant-roles */\\n|   return (\\n>     <AriaModal\\n|       dialogClass={dialogClassNames}\\n|       escapeExits={!escapeExitDisabled}\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Dialog/Dialog.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/FormLabel/FormLabel.jsx":
+/*!******************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/FormLabel/FormLabel.jsx ***!
+  \******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (13:8)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|     if (this.props.errorMessage) {\\n|       return (\\n>         <span\\n|           className=\\\"ds-c-field__hint ds-u-color--error\\\"\\n|           id={`${this.props.fieldId}-message`}\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/FormLabel/FormLabel.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/HelpDrawer/HelpDrawer.jsx":
+/*!********************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/HelpDrawer/HelpDrawer.jsx ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (27:6)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|     /* eslint-disable jsx-a11y/no-noninteractive-tabindex, react/no-danger */\\n|     return (\\n>       <div className=\\\"ds-c-help-drawer\\\">\\n|         <div className=\\\"ds-c-help-drawer__header\\\">\\n|           {/* The nested div below might seem redundant, but we need a\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/HelpDrawer/HelpDrawer.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/HelpDrawer/HelpDrawerToggle.jsx":
+/*!**************************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/HelpDrawer/HelpDrawerToggle.jsx ***!
+  \**************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (21:6)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|     return (\\n|       // Use a <span> since a <div> may be invalid depending where this link is nested\\n>       <span className={blockInlineClass}>\\n|         <a\\n|           href=\\\"javascript:void(0);\\\"\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/HelpDrawer/HelpDrawerToggle.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/MonthPicker/MonthPicker.jsx":
+/*!**********************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/MonthPicker/MonthPicker.jsx ***!
+  \**********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (112:6)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|     const { name, inversed } = this.props;\\n|     return (\\n>       <ol className=\\\"ds-c-list--bare ds-u-display--flex ds-u-justify-content--between ds-u-flex-wrap--wrap\\\">\\n|         {this.months.map((month, i) => (\\n|           <li key={month}>\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/MonthPicker/MonthPicker.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Review/Review.jsx":
+/*!************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Review/Review.jsx ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (19:8)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|     if (this.props.heading) {\\n|       return (\\n>         <Heading className=\\\"ds-c-review__heading ds-text ds-u-margin-bottom--0 ds-u-font-weight--bold ds-u-display--inline-block\\\">\\n|           {this.props.heading}\\n|         </Heading>\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Review/Review.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/SkipNav/SkipNav.jsx":
+/*!**************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/SkipNav/SkipNav.jsx ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (6:4)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| export function SkipNav({ children, href, onClick }) {\\n|   return (\\n>     <a className=\\\"ds-c-skip-nav\\\" href={href} onClick={onClick}>\\n|       {children}\\n|     </a>\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/SkipNav/SkipNav.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Spinner/Spinner.jsx":
+/*!**************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Spinner/Spinner.jsx ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (15:4)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|   return (\\n>     <span\\n|       className={className}\\n|       aria-valuetext={props['aria-valuetext']}\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Spinner/Spinner.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/StepList/StepList.jsx":
+/*!****************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/StepList/StepList.jsx ***!
+  \****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (12:2)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|  */\\n| export const StepList = ({ steps, ...props }) => (\\n>   <ol className=\\\"ds-c-step-list ds-u-margin-top--4\\\">\\n|     {steps.map((step, i) => <Step step={step} key={step.id || i} {...props} />)}\\n|   </ol>\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/StepList/StepList.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/Tab.jsx":
+/*!*******************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/Tab.jsx ***!
+  \*******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (44:8)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|       return (\\n|         // eslint-disable-next-line jsx-a11y/role-supports-aria-props\\n>         <a\\n|           aria-selected={String(this.props.selected)}\\n|           aria-controls={this.props.panelId}\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/Tab.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/TabPanel.jsx":
+/*!************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/TabPanel.jsx ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (13:4)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|   return (\\n>     <div\\n|       aria-labelledby={props.tabId}\\n|       aria-hidden={String(!props.selected)}\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/TabPanel.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/Tabs.jsx":
+/*!********************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/Tabs.jsx ***!
+  \********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (151:8)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|     const tabs = panels.map(panel => {\\n|       return (\\n>         <Tab\\n|           className={panel.props.tabClassName}\\n|           href={panel.props.tabHref}\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/Tabs.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/TextField/TextField.jsx":
+/*!******************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/TextField/TextField.jsx ***!
+  \******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (43:6)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|     return maskName ? (\\n>       <div className={`ds-c-field-mask ds-c-field-mask--${maskName}`}>\\n|         {this.renderMaskOverlay()}\\n|         <Mask mask={maskName}>{field}</Mask>\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/TextField/TextField.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNav.jsx":
+/*!**********************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNav.jsx ***!
+  \**********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (23:8)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|       return (\\n>         <VerticalNavItem\\n|           {...item}\\n|           _selectedId={this.props.selectedId}\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNav.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNavItem.jsx":
+/*!**************************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNavItem.jsx ***!
+  \**************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (107:8)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|     if (this.hasSubnav()) {\\n|       return (\\n>         <VerticalNav\\n|           selectedId={this.props._selectedId}\\n|           collapsed={this.state.collapsed}\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNavItem.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNavItemLabel.jsx":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNavItemLabel.jsx ***!
+  \*******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (63:6)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n|     return (\\n>       <this.LabelComponent {...props}>{this.props.label}</this.LabelComponent>\\n|     );\\n|   }\");\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNavItemLabel.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/index.js":
+/*!***************************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/index.js ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Alert_Alert__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Alert/Alert */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Alert/Alert.jsx\");\n/* harmony import */ var _Alert_Alert__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Alert_Alert__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Alert_Alert__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Alert_Alert__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _Autocomplete_Autocomplete__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Autocomplete/Autocomplete */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Autocomplete/Autocomplete.jsx\");\n/* harmony import */ var _Autocomplete_Autocomplete__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Autocomplete_Autocomplete__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Autocomplete_Autocomplete__WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Autocomplete_Autocomplete__WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _Badge_Badge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Badge/Badge */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Badge/Badge.jsx\");\n/* harmony import */ var _Badge_Badge__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Badge_Badge__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Badge_Badge__WEBPACK_IMPORTED_MODULE_2__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Badge_Badge__WEBPACK_IMPORTED_MODULE_2__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _Button_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Button/Button */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Button/Button.jsx\");\n/* harmony import */ var _Button_Button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Button_Button__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Button_Button__WEBPACK_IMPORTED_MODULE_3__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Button_Button__WEBPACK_IMPORTED_MODULE_3__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _ChoiceList_Choice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ChoiceList/Choice */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/Choice.jsx\");\n/* harmony import */ var _ChoiceList_Choice__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_ChoiceList_Choice__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ChoiceList_Choice__WEBPACK_IMPORTED_MODULE_4__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ChoiceList_Choice__WEBPACK_IMPORTED_MODULE_4__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _ChoiceList_ChoiceList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ChoiceList/ChoiceList */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/ChoiceList.jsx\");\n/* harmony import */ var _ChoiceList_ChoiceList__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_ChoiceList_ChoiceList__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ChoiceList_ChoiceList__WEBPACK_IMPORTED_MODULE_5__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ChoiceList_ChoiceList__WEBPACK_IMPORTED_MODULE_5__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _ChoiceList_Select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ChoiceList/Select */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/ChoiceList/Select.jsx\");\n/* harmony import */ var _ChoiceList_Select__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_ChoiceList_Select__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ChoiceList_Select__WEBPACK_IMPORTED_MODULE_6__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ChoiceList_Select__WEBPACK_IMPORTED_MODULE_6__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _DateField_DateField__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./DateField/DateField */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/DateField/DateField.jsx\");\n/* harmony import */ var _DateField_DateField__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_DateField_DateField__WEBPACK_IMPORTED_MODULE_7__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _DateField_DateField__WEBPACK_IMPORTED_MODULE_7__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _DateField_DateField__WEBPACK_IMPORTED_MODULE_7__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _Dialog_Dialog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Dialog/Dialog */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Dialog/Dialog.jsx\");\n/* harmony import */ var _Dialog_Dialog__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_Dialog_Dialog__WEBPACK_IMPORTED_MODULE_8__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Dialog_Dialog__WEBPACK_IMPORTED_MODULE_8__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Dialog_Dialog__WEBPACK_IMPORTED_MODULE_8__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _FormLabel_FormLabel__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./FormLabel/FormLabel */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/FormLabel/FormLabel.jsx\");\n/* harmony import */ var _FormLabel_FormLabel__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_FormLabel_FormLabel__WEBPACK_IMPORTED_MODULE_9__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _FormLabel_FormLabel__WEBPACK_IMPORTED_MODULE_9__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _FormLabel_FormLabel__WEBPACK_IMPORTED_MODULE_9__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _HelpDrawer_HelpDrawer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./HelpDrawer/HelpDrawer */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/HelpDrawer/HelpDrawer.jsx\");\n/* harmony import */ var _HelpDrawer_HelpDrawer__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_HelpDrawer_HelpDrawer__WEBPACK_IMPORTED_MODULE_10__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HelpDrawer_HelpDrawer__WEBPACK_IMPORTED_MODULE_10__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HelpDrawer_HelpDrawer__WEBPACK_IMPORTED_MODULE_10__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _HelpDrawer_HelpDrawerToggle__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./HelpDrawer/HelpDrawerToggle */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/HelpDrawer/HelpDrawerToggle.jsx\");\n/* harmony import */ var _HelpDrawer_HelpDrawerToggle__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_HelpDrawer_HelpDrawerToggle__WEBPACK_IMPORTED_MODULE_11__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HelpDrawer_HelpDrawerToggle__WEBPACK_IMPORTED_MODULE_11__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HelpDrawer_HelpDrawerToggle__WEBPACK_IMPORTED_MODULE_11__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _MonthPicker_MonthPicker__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./MonthPicker/MonthPicker */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/MonthPicker/MonthPicker.jsx\");\n/* harmony import */ var _MonthPicker_MonthPicker__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_MonthPicker_MonthPicker__WEBPACK_IMPORTED_MODULE_12__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _MonthPicker_MonthPicker__WEBPACK_IMPORTED_MODULE_12__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _MonthPicker_MonthPicker__WEBPACK_IMPORTED_MODULE_12__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _Review_Review__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Review/Review */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Review/Review.jsx\");\n/* harmony import */ var _Review_Review__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_Review_Review__WEBPACK_IMPORTED_MODULE_13__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Review_Review__WEBPACK_IMPORTED_MODULE_13__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Review_Review__WEBPACK_IMPORTED_MODULE_13__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _SkipNav_SkipNav__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./SkipNav/SkipNav */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/SkipNav/SkipNav.jsx\");\n/* harmony import */ var _SkipNav_SkipNav__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_SkipNav_SkipNav__WEBPACK_IMPORTED_MODULE_14__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _SkipNav_SkipNav__WEBPACK_IMPORTED_MODULE_14__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _SkipNav_SkipNav__WEBPACK_IMPORTED_MODULE_14__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _Spinner_Spinner__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Spinner/Spinner */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Spinner/Spinner.jsx\");\n/* harmony import */ var _Spinner_Spinner__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_Spinner_Spinner__WEBPACK_IMPORTED_MODULE_15__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Spinner_Spinner__WEBPACK_IMPORTED_MODULE_15__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Spinner_Spinner__WEBPACK_IMPORTED_MODULE_15__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _StepList_StepList__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./StepList/StepList */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/StepList/StepList.jsx\");\n/* harmony import */ var _StepList_StepList__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_StepList_StepList__WEBPACK_IMPORTED_MODULE_16__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _StepList_StepList__WEBPACK_IMPORTED_MODULE_16__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _StepList_StepList__WEBPACK_IMPORTED_MODULE_16__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _Tabs_Tab__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Tabs/Tab */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/Tab.jsx\");\n/* harmony import */ var _Tabs_Tab__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_Tabs_Tab__WEBPACK_IMPORTED_MODULE_17__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Tabs_Tab__WEBPACK_IMPORTED_MODULE_17__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Tabs_Tab__WEBPACK_IMPORTED_MODULE_17__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _Tabs_Tabs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./Tabs/Tabs */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/Tabs.jsx\");\n/* harmony import */ var _Tabs_Tabs__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_Tabs_Tabs__WEBPACK_IMPORTED_MODULE_18__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Tabs_Tabs__WEBPACK_IMPORTED_MODULE_18__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Tabs_Tabs__WEBPACK_IMPORTED_MODULE_18__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _Tabs_TabPanel__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Tabs/TabPanel */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/Tabs/TabPanel.jsx\");\n/* harmony import */ var _Tabs_TabPanel__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_Tabs_TabPanel__WEBPACK_IMPORTED_MODULE_19__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Tabs_TabPanel__WEBPACK_IMPORTED_MODULE_19__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Tabs_TabPanel__WEBPACK_IMPORTED_MODULE_19__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _TextField_TextField__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./TextField/TextField */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/TextField/TextField.jsx\");\n/* harmony import */ var _TextField_TextField__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_TextField_TextField__WEBPACK_IMPORTED_MODULE_20__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _TextField_TextField__WEBPACK_IMPORTED_MODULE_20__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _TextField_TextField__WEBPACK_IMPORTED_MODULE_20__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _VerticalNav_VerticalNav__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./VerticalNav/VerticalNav */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNav.jsx\");\n/* harmony import */ var _VerticalNav_VerticalNav__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_VerticalNav_VerticalNav__WEBPACK_IMPORTED_MODULE_21__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _VerticalNav_VerticalNav__WEBPACK_IMPORTED_MODULE_21__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _VerticalNav_VerticalNav__WEBPACK_IMPORTED_MODULE_21__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _VerticalNav_VerticalNavItem__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./VerticalNav/VerticalNavItem */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNavItem.jsx\");\n/* harmony import */ var _VerticalNav_VerticalNavItem__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_VerticalNav_VerticalNavItem__WEBPACK_IMPORTED_MODULE_22__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _VerticalNav_VerticalNavItem__WEBPACK_IMPORTED_MODULE_22__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _VerticalNav_VerticalNavItem__WEBPACK_IMPORTED_MODULE_22__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _VerticalNav_VerticalNavItemLabel__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./VerticalNav/VerticalNavItemLabel */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/VerticalNav/VerticalNavItemLabel.jsx\");\n/* harmony import */ var _VerticalNav_VerticalNavItemLabel__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_VerticalNav_VerticalNavItemLabel__WEBPACK_IMPORTED_MODULE_23__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _VerticalNav_VerticalNavItemLabel__WEBPACK_IMPORTED_MODULE_23__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _VerticalNav_VerticalNavItemLabel__WEBPACK_IMPORTED_MODULE_23__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/index.js?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/classnames/index.js":
+/*!********************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/classnames/index.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n  Copyright (c) 2017 Jed Watson.\n  Licensed under the MIT License (MIT), see\n  http://jedwatson.github.io/classnames\n*/\n/* global define */\n\n(function () {\n\t'use strict';\n\n\tvar hasOwn = {}.hasOwnProperty;\n\n\tfunction classNames () {\n\t\tvar classes = [];\n\n\t\tfor (var i = 0; i < arguments.length; i++) {\n\t\t\tvar arg = arguments[i];\n\t\t\tif (!arg) continue;\n\n\t\t\tvar argType = typeof arg;\n\n\t\t\tif (argType === 'string' || argType === 'number') {\n\t\t\t\tclasses.push(arg);\n\t\t\t} else if (Array.isArray(arg) && arg.length) {\n\t\t\t\tvar inner = classNames.apply(null, arg);\n\t\t\t\tif (inner) {\n\t\t\t\t\tclasses.push(inner);\n\t\t\t\t}\n\t\t\t} else if (argType === 'object') {\n\t\t\t\tfor (var key in arg) {\n\t\t\t\t\tif (hasOwn.call(arg, key) && arg[key]) {\n\t\t\t\t\t\tclasses.push(key);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\treturn classes.join(' ');\n\t}\n\n\tif ( true && module.exports) {\n\t\tclassNames.default = classNames;\n\t\tmodule.exports = classNames;\n\t} else if (true) {\n\t\t// register as 'classnames', consistent with npm package name\n\t\t!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {\n\t\t\treturn classNames;\n\t\t}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),\n\t\t\t\t__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));\n\t} else {}\n}());\n\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/classnames/index.js?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/node_modules/lodash.uniqueid/index.js":
+/*!*************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/node_modules/lodash.uniqueid/index.js ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("/* WEBPACK VAR INJECTION */(function(global) {/**\n * lodash (Custom Build) <https://lodash.com/>\n * Build: `lodash modularize exports=\"npm\" -o ./`\n * Copyright jQuery Foundation and other contributors <https://jquery.org/>\n * Released under MIT license <https://lodash.com/license>\n * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>\n * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors\n */\n\n/** Used as references for various `Number` constants. */\nvar INFINITY = 1 / 0;\n\n/** `Object#toString` result references. */\nvar symbolTag = '[object Symbol]';\n\n/** Detect free variable `global` from Node.js. */\nvar freeGlobal = typeof global == 'object' && global && global.Object === Object && global;\n\n/** Detect free variable `self`. */\nvar freeSelf = typeof self == 'object' && self && self.Object === Object && self;\n\n/** Used as a reference to the global object. */\nvar root = freeGlobal || freeSelf || Function('return this')();\n\n/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n\n/** Used to generate unique IDs. */\nvar idCounter = 0;\n\n/**\n * Used to resolve the\n * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)\n * of values.\n */\nvar objectToString = objectProto.toString;\n\n/** Built-in value references. */\nvar Symbol = root.Symbol;\n\n/** Used to convert symbols to primitives and strings. */\nvar symbolProto = Symbol ? Symbol.prototype : undefined,\n    symbolToString = symbolProto ? symbolProto.toString : undefined;\n\n/**\n * The base implementation of `_.toString` which doesn't convert nullish\n * values to empty strings.\n *\n * @private\n * @param {*} value The value to process.\n * @returns {string} Returns the string.\n */\nfunction baseToString(value) {\n  // Exit early for strings to avoid a performance hit in some environments.\n  if (typeof value == 'string') {\n    return value;\n  }\n  if (isSymbol(value)) {\n    return symbolToString ? symbolToString.call(value) : '';\n  }\n  var result = (value + '');\n  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;\n}\n\n/**\n * Checks if `value` is object-like. A value is object-like if it's not `null`\n * and has a `typeof` result of \"object\".\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is object-like, else `false`.\n * @example\n *\n * _.isObjectLike({});\n * // => true\n *\n * _.isObjectLike([1, 2, 3]);\n * // => true\n *\n * _.isObjectLike(_.noop);\n * // => false\n *\n * _.isObjectLike(null);\n * // => false\n */\nfunction isObjectLike(value) {\n  return !!value && typeof value == 'object';\n}\n\n/**\n * Checks if `value` is classified as a `Symbol` primitive or object.\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.\n * @example\n *\n * _.isSymbol(Symbol.iterator);\n * // => true\n *\n * _.isSymbol('abc');\n * // => false\n */\nfunction isSymbol(value) {\n  return typeof value == 'symbol' ||\n    (isObjectLike(value) && objectToString.call(value) == symbolTag);\n}\n\n/**\n * Converts `value` to a string. An empty string is returned for `null`\n * and `undefined` values. The sign of `-0` is preserved.\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to process.\n * @returns {string} Returns the string.\n * @example\n *\n * _.toString(null);\n * // => ''\n *\n * _.toString(-0);\n * // => '-0'\n *\n * _.toString([1, 2, 3]);\n * // => '1,2,3'\n */\nfunction toString(value) {\n  return value == null ? '' : baseToString(value);\n}\n\n/**\n * Generates a unique ID. If `prefix` is given, the ID is appended to it.\n *\n * @static\n * @since 0.1.0\n * @memberOf _\n * @category Util\n * @param {string} [prefix=''] The value to prefix the ID with.\n * @returns {string} Returns the unique ID.\n * @example\n *\n * _.uniqueId('contact_');\n * // => 'contact_104'\n *\n * _.uniqueId();\n * // => '105'\n */\nfunction uniqueId(prefix) {\n  var id = ++idCounter;\n  return toString(prefix) + id;\n}\n\nmodule.exports = uniqueId;\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../node_modules/webpack/buildin/global.js */ \"./node_modules/webpack/buildin/global.js\")))\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/node_modules/lodash.uniqueid/index.js?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/src/components/CloseSymbol/CloseSymbol.jsx":
+/*!******************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/src/components/CloseSymbol/CloseSymbol.jsx ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Close = function Close() {\n  return _react2.default.createElement(\n    \"svg\",\n    {\n      width: \"22px\",\n      height: \"22px\",\n      viewBox: \"0 0 22 22\",\n      version: \"1.1\",\n      xmlns: \"http://www.w3.org/2000/svg\",\n      xmlnsXlink: \"http://www.w3.org/1999/xlink\"\n    },\n    _react2.default.createElement(\n      \"title\",\n      null,\n      \"Close\"\n    ),\n    _react2.default.createElement(\n      \"g\",\n      { id: \"Symbols\", stroke: \"none\", strokeWidth: \"1\", fill: \"none\", fillRule: \"evenodd\" },\n      _react2.default.createElement(\n        \"g\",\n        { id: \"Icons/Close\", transform: \"translate(-6.000000, -6.000000)\", fill: \"#146A5D\" },\n        _react2.default.createElement(\"path\", {\n          d: \"M18.6874718,17 L27.7667318,7.92073996 C28.0777561,7.60971575 28.0777561,7.10678297 27.7667318,6.79575876 L27.2042412,6.23326816 C26.893217,5.92224395 26.3902843,5.92224395 26.07926,6.23326816 L17,15.3125282 L7.92073996,6.2398857 C7.60971575,5.92886148 7.10678297,5.92886148 6.79575876,6.2398857 L6.23326816,6.8023763 C5.92224395,7.11340051 5.92224395,7.61633328 6.23326816,7.9273575 L15.3125282,17 L6.2398857,26.07926 C5.92886148,26.3902843 5.92886148,26.893217 6.2398857,27.2042412 L6.8023763,27.7667318 C7.11340051,28.0777561 7.61633328,28.0777561 7.9273575,27.7667318 L17,18.6874718 L26.07926,27.7667318 C26.3902843,28.0777561 26.893217,28.0777561 27.2042412,27.7667318 L27.7667318,27.2042412 C28.0777561,26.893217 28.0777561,26.3902843 27.7667318,26.07926 L18.6874718,17 Z\",\n          id: \"Path\"\n        })\n      )\n    )\n  );\n};\n\nexports.default = Close;\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/src/components/CloseSymbol/CloseSymbol.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/src/components/CloseSymbol/index.js":
+/*!***********************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/src/components/CloseSymbol/index.js ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _CloseSymbol = __webpack_require__(/*! ./CloseSymbol */ \"./packages/themes/medicare-site-package/src/components/CloseSymbol/CloseSymbol.jsx\");\n\nObject.defineProperty(exports, 'default', {\n  enumerable: true,\n  get: function get() {\n    return _interopRequireDefault(_CloseSymbol).default;\n  }\n});\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/src/components/CloseSymbol/index.js?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/src/components/HamburgerSymbol/HamburgerSymbol.jsx":
+/*!**************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/src/components/HamburgerSymbol/HamburgerSymbol.jsx ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Hamburger = function Hamburger() {\n  return _react2.default.createElement(\n    \"svg\",\n    {\n      width: \"24px\",\n      height: \"20px\",\n      viewBox: \"0 0 24 20\",\n      version: \"1.1\",\n      xmlns: \"http://www.w3.org/2000/svg\",\n      xmlnsXlink: \"http://www.w3.org/1999/xlink\"\n    },\n    _react2.default.createElement(\n      \"title\",\n      null,\n      \"Menu\"\n    ),\n    _react2.default.createElement(\n      \"g\",\n      { id: \"Symbols\", stroke: \"none\", strokeWidth: \"1\", fill: \"none\", fillRule: \"evenodd\" },\n      _react2.default.createElement(\n        \"g\",\n        { id: \"Icons/Hamburger\", transform: \"translate(-5.000000, -7.000000)\", fill: \"#146A5D\" },\n        _react2.default.createElement(\"path\", {\n          d: \"M28.6785714,9.02247191 L5.32142857,9.02247191 C5.14390847,9.02247191 5,8.87155666 5,8.68539326 L5,7.33707865 C5,7.15091525 5.14390847,7 5.32142857,7 L28.6785714,7 C28.8560915,7 29,7.15091525 29,7.33707865 L29,8.68539326 C29,8.87155666 28.8560915,9.02247191 28.6785714,9.02247191 Z M28.6785714,18.011236 L5.32142857,18.011236 C5.14390847,18.011236 5,17.8603207 5,17.6741573 L5,16.3258427 C5,16.1396793 5.14390847,15.988764 5.32142857,15.988764 L28.6785714,15.988764 C28.8560915,15.988764 29,16.1396793 29,16.3258427 L29,17.6741573 C29,17.8603207 28.8560915,18.011236 28.6785714,18.011236 Z M28.6785714,27 L5.32142857,27 C5.14390847,27 5,26.8490847 5,26.6629213 L5,25.3146067 C5,25.1284433 5.14390847,24.9775281 5.32142857,24.9775281 L28.6785714,24.9775281 C28.8560915,24.9775281 29,25.1284433 29,25.3146067 L29,26.6629213 C29,26.8490847 28.8560915,27 28.6785714,27 Z\",\n          id: \"Shape\"\n        })\n      )\n    )\n  );\n};\n\nexports.default = Hamburger;\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/src/components/HamburgerSymbol/HamburgerSymbol.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/src/components/HamburgerSymbol/index.js":
+/*!***************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/src/components/HamburgerSymbol/index.js ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _HamburgerSymbol = __webpack_require__(/*! ./HamburgerSymbol */ \"./packages/themes/medicare-site-package/src/components/HamburgerSymbol/HamburgerSymbol.jsx\");\n\nObject.defineProperty(exports, 'default', {\n  enumerable: true,\n  get: function get() {\n    return _interopRequireDefault(_HamburgerSymbol).default;\n  }\n});\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/src/components/HamburgerSymbol/index.js?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/src/components/Navbar/Navbar.jsx":
+/*!********************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/src/components/Navbar/Navbar.jsx ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _classnames = __webpack_require__(/*! classnames */ \"./packages/themes/medicare-site-package/node_modules/classnames/index.js\");\n\nvar _classnames2 = _interopRequireDefault(_classnames);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n/*\n * The Navbar component serves as a container element for the navbar's content\n */\n\nvar Navbar = function Navbar(_ref) {\n  var children = _ref.children,\n      className = _ref.className,\n      _ref$inverse = _ref.inverse,\n      inverse = _ref$inverse === undefined ? false : _ref$inverse;\n\n  var cN = (0, _classnames2.default)('m-c-navbar', inverse && 'm-c-navbar--inverse', className);\n  return _react2.default.createElement(\n    'div',\n    { className: cN },\n    children\n  );\n};\n\nexports.default = Navbar;\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/src/components/Navbar/Navbar.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/src/components/NavigationMenu/NavigationMenu.jsx":
+/*!************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/src/components/NavigationMenu/NavigationMenu.jsx ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _components = __webpack_require__(/*! @cmsgov/design-system-core/src/components */ \"./packages/themes/medicare-site-package/node_modules/@cmsgov/design-system-core/src/components/index.js\");\n\nvar _CloseSymbol = __webpack_require__(/*! ../CloseSymbol */ \"./packages/themes/medicare-site-package/src/components/CloseSymbol/index.js\");\n\nvar _CloseSymbol2 = _interopRequireDefault(_CloseSymbol);\n\nvar _HamburgerSymbol = __webpack_require__(/*! ../HamburgerSymbol */ \"./packages/themes/medicare-site-package/src/components/HamburgerSymbol/index.js\");\n\nvar _HamburgerSymbol2 = _interopRequireDefault(_HamburgerSymbol);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _classnames = __webpack_require__(/*! classnames */ \"./packages/themes/medicare-site-package/node_modules/classnames/index.js\");\n\nvar _classnames2 = _interopRequireDefault(_classnames);\n\nvar _lodash = __webpack_require__(/*! lodash.uniqueid */ \"./packages/themes/medicare-site-package/node_modules/lodash.uniqueid/index.js\");\n\nvar _lodash2 = _interopRequireDefault(_lodash);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar NavigationMenu = function (_React$PureComponent) {\n  _inherits(NavigationMenu, _React$PureComponent);\n\n  function NavigationMenu(props) {\n    _classCallCheck(this, NavigationMenu);\n\n    var _this = _possibleConstructorReturn(this, (NavigationMenu.__proto__ || Object.getPrototypeOf(NavigationMenu)).call(this, props));\n\n    _this.state = { menuOpen: false };\n    _this.toggleMenu = _this.toggleMenu.bind(_this);\n    _this.id = (0, _lodash2.default)('navigationMenuButton_');\n    return _this;\n  }\n\n  _createClass(NavigationMenu, [{\n    key: 'toggleMenu',\n    value: function toggleMenu() {\n      this.setState({ menuOpen: !this.state.menuOpen });\n    }\n  }, {\n    key: 'render',\n    value: function render() {\n      var containerClasses = (0, _classnames2.default)('m-c-navigationMenu__container', this.props.alwaysShowMenuButton && 'm-c-navigationMenu__container--alwaysShowMenuButton');\n\n      var navClasses = (0, _classnames2.default)('m-c-navigationMenu', this.state.menuOpen && 'm-c-navigationMenu--open');\n\n      return _react2.default.createElement(\n        'div',\n        { className: containerClasses },\n        _react2.default.createElement(\n          'div',\n          { className: 'm-c-navigationMenu__toggleContainer' },\n          _react2.default.createElement(\n            _components.Button,\n            {\n              id: this.id,\n              'aria-expanded': !!this.state.menuOpen,\n              'aria-haspopup': 'true',\n              'aria-owns': 'menu-container',\n              className: 'm-c-navigationMenu__mobileToggle',\n              onClick: this.toggleMenu,\n              variation: 'transparent'\n            },\n            this.state.menuOpen ? _react2.default.createElement(_CloseSymbol2.default, null) : _react2.default.createElement(_HamburgerSymbol2.default, null)\n          )\n        ),\n        _react2.default.createElement(\n          'nav',\n          { role: 'navigation', id: 'menu-container', 'aria-labelledby': this.id, className: navClasses },\n          _react2.default.createElement(\n            'ul',\n            { className: 'm-c-navigationMenu__list' },\n            this.props.children\n          )\n        )\n      );\n    }\n  }]);\n\n  return NavigationMenu;\n}(_react2.default.PureComponent);\n\nexports.default = NavigationMenu;\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/src/components/NavigationMenu/NavigationMenu.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/src/components/SimpleHeader/SimpleHeader.example.jsx":
+/*!****************************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/src/components/SimpleHeader/SimpleHeader.example.jsx ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"react-dom\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _SimpleHeader = __webpack_require__(/*! ./SimpleHeader */ \"./packages/themes/medicare-site-package/src/components/SimpleHeader/SimpleHeader.jsx\");\n\nvar _SimpleHeader2 = _interopRequireDefault(_SimpleHeader);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// Here is an example way to pass in the settings for a logo, or you can hard-code them into the header below\nvar logoExample = {\n  src: 'https://via.placeholder.com/300x50?text=Placeholder+Logo',\n  alt: 'This is a logo'\n};\n\n_reactDom2.default.render(_react2.default.createElement(_SimpleHeader2.default, {\n  logo: logoExample,\n  menuItems: [{\n    url: 'www.gt',\n    title: 'Link 1'\n  }, {\n    url: 'www.gt',\n    title: 'Link 2'\n  }]\n}), document.getElementById('js-example'));\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/src/components/SimpleHeader/SimpleHeader.example.jsx?");
+
+/***/ }),
+
+/***/ "./packages/themes/medicare-site-package/src/components/SimpleHeader/SimpleHeader.jsx":
+/*!********************************************************************************************!*\
+  !*** ./packages/themes/medicare-site-package/src/components/SimpleHeader/SimpleHeader.jsx ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _Navbar = __webpack_require__(/*! ../Navbar/Navbar */ \"./packages/themes/medicare-site-package/src/components/Navbar/Navbar.jsx\");\n\nvar _Navbar2 = _interopRequireDefault(_Navbar);\n\nvar _NavigationMenu = __webpack_require__(/*! ../NavigationMenu/NavigationMenu */ \"./packages/themes/medicare-site-package/src/components/NavigationMenu/NavigationMenu.jsx\");\n\nvar _NavigationMenu2 = _interopRequireDefault(_NavigationMenu);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar SimpleHeader = function SimpleHeader(_ref) {\n  var logo = _ref.logo,\n      menuItems = _ref.menuItems;\n\n  return (\n    // Start by bringing in the Navbar component, this acts as the header's container\n    // Navbar has one prop - \"inverse\" - which determines the 'theme':\n    //   - When inverse == false, the Navbar has a green background and white text\n    //   - When inverse == true, the Navbar has a white background with green text\n    _react2.default.createElement(\n      _Navbar2.default,\n      { inverse: false, className: 'm-c-navbar' },\n      _react2.default.createElement(\n        'a',\n        { href: '/somewhere' },\n        _react2.default.createElement('img', logo)\n      ),\n      _react2.default.createElement(\n        'div',\n        { className: 'm-c-navbar__productName' },\n        'Medicare Coverage Tools'\n      ),\n      _react2.default.createElement(\n        _NavigationMenu2.default,\n        null,\n        menuItems.map(function (item, i) {\n          return _react2.default.createElement(\n            'li',\n            { key: i, className: 'm-c-navigationMenu__item' },\n            _react2.default.createElement(\n              'a',\n              { href: item.url },\n              item.title\n            )\n          );\n        })\n      )\n    )\n  );\n};\n\nexports.default = SimpleHeader;\n\n//# sourceURL=webpack:///./packages/themes/medicare-site-package/src/components/SimpleHeader/SimpleHeader.jsx?");
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = React;\n\n//# sourceURL=webpack:///external_%22React%22?");
+
+/***/ }),
+
+/***/ "react-dom":
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = ReactDOM;\n\n//# sourceURL=webpack:///external_%22ReactDOM%22?");
+
+/***/ })
+
+/******/ });</script>
+</body>
+</html>
